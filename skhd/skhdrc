@@ -1,17 +1,22 @@
 # open terminal, blazingly fast compared to iTerm/Hyper
 # cmd - enter : kitty --single-instance -d ~
 
-# Modes
+# --- Modes ---
+# Default mode, few keymaps defined
 :: default : yabai -m config window_border off
+
+# Yabai Mode, for easier controlling yabai and window management
+# Enter with <M-x> in default mode
+# Exit with <esc> and return to default mode
 :: yabai : yabai -m config window_border on
-alt - x ; yabai
-yabai < alt - x ; default
+alt - y ; yabai
+yabai < alt - y ; default
 yabai < escape; default
 
 # default < cmd - return : bash /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 #
-# YABAI
+# YABAI MODE MAPPINGS
 #
 # focus window
 alt - h : yabai -m window --focus west
@@ -115,10 +120,10 @@ yabai < shift - w : yabai -m window --resize top:0:-20
 yabai < shift - d : yabai -m window --resize right:20:0
 
 # decrease window size
-yabai < alt - a : yabai -m window --resize left:20:0
-yabai < alt - s : yabai -m window --resize bottom:0:-20
-yabai < alt - w : yabai -m window --resize top:0:20
-yabai < alt - d : yabai -m window --resize right:-20:0
+yabai < a : yabai -m window --resize left:20:0
+yabai < s : yabai -m window --resize bottom:0:-20
+yabai < w : yabai -m window --resize top:0:20
+yabai < d : yabai -m window --resize right:-20:0
 
 # set insertion point in focused container
 ctrl + alt - h : yabai -m window --insert west
@@ -137,7 +142,7 @@ yabai < x : yabai -m space --mirror x-axis
 
 # toggle desktop offset
 alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
-yabai < a : yabai -m space --toggle padding; yabai -m space --toggle gap
+yabai < alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window fullscreen zoom
 yabai < f : yabai -m window --toggle zoom-fullscreen
@@ -155,6 +160,15 @@ alt - e : yabai -m window --toggle split
 alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
+# Swap window under mouse
+yabai < space : yabai -m window --swap mouse
+yabai < ctrl - 6 : yabai -m window --swap recent
+yabai < 0x21 : yabai -m window --swap prev # [
+yabai < 0x1E : yabai -m window --swap next # ]
+
+
 # change layout of desktop
-yabai < shift - a : yabai -m space --layout bsp
-yabai < shift - d : yabai -m space --layout float
+yabai < ctrl - a : yabai -m space --layout bsp;\
+    yabai -m config active_window_border_color 0xfff92672
+yabai < ctrl - d : yabai -m space --layout float;\
+    yabai -m config active_window_border_color 0xff62d8f1

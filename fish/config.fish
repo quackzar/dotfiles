@@ -33,10 +33,19 @@ alias ls 'exa'
 alias d 'kitty +kitten diff'
 alias icat 'kitty +kitten icat'
 
+# Change kitty's opacity, range {0,1}
 alias opacity 'kitty @ set-background-opacity -a'
+
+# Turn yabai's statusbar on or off
 alias statusbar 'yabai -m config status_bar'
+
+# Turn yabai's border on or off
 alias border 'yabai -m config window_border'
+
+# Toggle the macOS menubar from on to auto.
 alias menubar 'osascript ~/Scripts/toggle_menubar.scpt'
+
+
 set -x XDG_CONFIG_HOME '/Users/mikkelmadsen/.config'
 
 set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
@@ -51,12 +60,7 @@ set -U FZF_ENABLE_DIR_PREVIEW 1
 set -U FZF_LEGACY_KEYBINDINGS 1
 set -U FZF_TMUX 1
 
-set -x BAT_THEME "Monokai Extended"
 set -x LESS -R
-
-
-#                      coal    red   blue  orange  lime
-# set budspencer_colors 272822 F92672 66D9EF FD971F A6E22E ff6600 ff0000 ff0033 3300ff 0000ff 00ffff 00ff00
 
 # Spacefish colors
 set SPACEFISH_GIT_BRANCH_COLOR FF9700
@@ -65,3 +69,5 @@ set SPACEFISH_GIT_STATUS_COLOR FF9700
 
 bind \cy forward-bigword
 test -r /Users/mikkelmadsen/.opam/opam-init/init.fish && . /Users/mikkelmadsen/.opam/opam-init/init.fish > /dev/null 2> /dev/null || true
+
+zoxide init fish | source
