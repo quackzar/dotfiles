@@ -28,6 +28,8 @@ alias vimdiff 'nvim -d'
 alias skim 'open /Applications/Skim.app'
 alias sed 'gsed'
 
+alias ls 'exa'
+
 alias d 'kitty +kitten diff'
 alias icat 'kitty +kitten icat'
 
@@ -39,7 +41,9 @@ set -x XDG_CONFIG_HOME '/Users/mikkelmadsen/.config'
 
 set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
 set -U FZF_FIND_FILE_COMMAND 'rg --files'
-set -U FZF_DEFAULT_OPTS ' --color fg:252,hl:67,fg+:252,bg+:235,hl+:81 --color info:144,prompt:161,spinner:135,pointer:135,marker:118'
+# set -U FZF_DEFAULT_OPTS ' --color fg:252,hl:67,fg+:252,bg+:235,hl+:81,info:144,prompt:161,spinner:135,pointer:135,marker:118'
+set -U FZF_DEFAULT_OPTS '--color=bg+:#293739,bg:#1B1D1E,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
+
 set -U FZF_PREVIEW_DIR_CMD "ls"
 set -U FZF_ENABLE_OPEN_PREVIEW 1
 set -U FZF_ENABLE_FILE_PREVIEW 1

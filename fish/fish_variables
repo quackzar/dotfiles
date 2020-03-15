@@ -1,7 +1,7 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR FZF_DEFAULT_OPTIONS:\x20\x2d\x2dcolor\x20fg\x3a252\x2cbg\x3a\x2chl\x3a67\x2cfg\x2b\x3a252\x2cbg\x2b\x3a235\x2chl\x2b\x3a81\x20\x2d\x2dcolor\x20info\x3a144\x2cprompt\x3a161\x2cspinner\x3a135\x2cpointer\x3a135\x2cmarker\x3a118
-SETUVAR FZF_DEFAULT_OPTS:\x20\x2d\x2dcolor\x20fg\x3a252\x2chl\x3a67\x2cfg\x2b\x3a252\x2cbg\x2b\x3a235\x2chl\x2b\x3a81\x20\x2d\x2dcolor\x20info\x3a144\x2cprompt\x3a161\x2cspinner\x3a135\x2cpointer\x3a135\x2cmarker\x3a118
+SETUVAR FZF_DEFAULT_OPTS:\x2d\x2dcolor\x3dbg\x2b\x3a\x23293739\x2cbg\x3a\x231B1D1E\x2cborder\x3a\x23808080\x2cspinner\x3a\x23E6DB74\x2chl\x3a\x237E8E91\x2cfg\x3a\x23F8F8F2\x2cheader\x3a\x237E8E91\x2cinfo\x3a\x23A6E22E\x2cpointer\x3a\x23A6E22E\x2cmarker\x3a\x23F92672\x2cfg\x2b\x3a\x23F8F8F2\x2cprompt\x3a\x23F92672\x2chl\x2b\x3a\x23F92672
 SETUVAR FZF_ENABLE_DIR_PREVIEW:1
 SETUVAR FZF_ENABLE_FILE_PREVIEW:1
 SETUVAR FZF_ENABLE_OPEN_PREVIEW:1
@@ -11,6 +11,7 @@ SETUVAR FZF_PREVIEW_DIR_CMD:ls
 SETUVAR FZF_PREVIEW_FILE_CMD:bat\x20\x2d\x2dcolor\x3dalways\x20\x7b\x7d
 SETUVAR FZF_TMUX:1
 SETUVAR FZF_TMUX_HEIGHT:40\x25
+SETUVAR TERM:xterm
 SETUVAR ZO_CMD:zo
 SETUVAR Z_CMD:z
 SETUVAR Z_DATA:/Users/mikkelmadsen/\x2elocal/share/z/data
