@@ -7,7 +7,6 @@ yabai -m config status_bar_icon_font         "DejaVuSansMono Nerd Font:Book:12.0
 yabai -m config status_bar_background_color  0xff202020
 yabai -m config status_bar_foreground_color  0xffa8a8a8
 yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
-# yabai -m config status_bar_space_icon_strip           X
 
 yabai -m config status_bar_power_icon_strip   
 yabai -m config status_bar_space_icon        
@@ -56,6 +55,12 @@ yabai -m config window_gap                   10
 yabai -m config mouse_modifier fn
 yabai -m config mouse_action1 move
 yabai -m config mouse_action2 resize
+
+
+# Rules
+yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^Keka$" manage=off
+yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
 
 
 echo "yabai configuration loaded.."
