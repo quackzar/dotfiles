@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# -------- Autostart -------
+# set -U SXHKD_SHELL /usr/bin/bash
+killall -9 picom
+killall -9 sxhkd
+# killall -9 plasmashell
+sxhkd &
+picom -b --config $HOME/.config/picom/picom.conf &
+$HOME/.config/polybar/launch.sh &
+$HOME/.fehbg
+
+
+bspc monitor DP-4 -d 1 2 3 4 5
+bspc monitor HDMI-0 -d 6 7 8 9 10
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a ulauncher manage=off border=off
+bspc rule -a albert border=off
+bspc rule -a Zathura state=tiled
+
+# bspc rule -a dropdown sticky=on state=floating hidden=on
+# kitty --class dropdown -e "zsh -i" &
+
+
+bspc rule -a plasmashell sticky=on layer=above state=floating
+
+
+killall plasmashell
