@@ -4,10 +4,13 @@ set -gx PATH "$HOME/.gem/ruby/2.3.0/bin" $PATH
 set -gx PATH "$HOME/.gem/ruby/2.6.0/bin" $PATH
 set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx PATH "$HOME/Library/Python/3.7/bin" $PATH
+set -gx PATH "$HOME/.ghcup/bin" $PATH
 
 set -gx GOPATH "$HOME/go"
 set -gx GOBIN "$GOPATH/bin"
 set -gx PATH "$GOBIN" $PATH
+
+set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 # set -gx MANPATH "/usr/local/texlive/2019basic/texmf-dist/doc/man" $MANPATH
 
