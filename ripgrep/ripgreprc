@@ -1,11 +1,11 @@
 # Search hidden files and directories.
---hidden
+# --hidden
 
 # Follow symbolic links.
 --follow
 
 # Don't respect ignore files (.gitignore, .ignore, etc.).
---no-ignore
+# --no-ignore
 
 # Exclude directories.
 --glob=!{.git,.svn,.tldr,node_modules,Trash,vendor,.DS_Store}

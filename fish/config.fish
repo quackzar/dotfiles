@@ -10,7 +10,6 @@ set -gx GOPATH "$HOME/go"
 set -gx GOBIN "$GOPATH/bin"
 set -gx PATH "$GOBIN" $PATH
 
-set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 # set -gx MANPATH "/usr/local/texlive/2019basic/texmf-dist/doc/man" $MANPATH
 
@@ -24,7 +23,6 @@ alias pip 'pip3'
 alias vim 'nvim'
 alias vi 'nvim'
 alias vimdiff 'nvim -d'
-alias sed 'gsed'
 
 alias ls 'exa'
 alias make 'colormake'
@@ -42,6 +40,7 @@ switch (uname)
         set -gx PATH "/usr/local/texlive/2019basic/bin/x86_64-darwin" $PATH
         # Turn yabai's statusbar on or off
         alias statusbar 'yabai -m config status_bar'
+        alias sed 'gsed'
 
         # Turn yabai's border on or off
         alias border 'yabai -m config window_border'
@@ -49,11 +48,16 @@ switch (uname)
         # Toggle the macOS menubar from on to auto.
         alias menubar 'osascript ~/Scripts/toggle_menubar.scpt'
 
+        set -gx XDG_CONFIG_HOME "/Users/mikkelmadsen/.config"
         alias skim 'open /Applications/Skim.app'
+    case Linux
+        set -gx XDG_CONFIG_HOME "/home/quack/.config"
 end
 
+set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
+
 set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
-set -U FZF_FIND_FILE_COMMAND 'rg --files'
+set -U FZF_FIND_FILE_COMMAND 'rg --files --no-messages'
 set -U FZF_DEFAULT_OPTS '--reverse --height 40% --color=bg+:#293739,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
 
 set -U FZF_PREVIEW_DIR_CMD "ls"
