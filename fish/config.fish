@@ -52,6 +52,8 @@ switch (uname)
         alias skim 'open /Applications/Skim.app'
     case Linux
         set -gx XDG_CONFIG_HOME "/home/quack/.config"
+        alias pbcopy 'xclip -selection clipboard'
+        alias pbpaste 'xclip -selection clipboard -o'
 end
 
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"

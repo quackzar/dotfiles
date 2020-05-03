@@ -17,6 +17,8 @@ SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR __fish_initialized:3100
+SETUVAR _fish_abbr_pbcopy:xclip\x20\x2dselection\x20c
+SETUVAR _fish_abbr_pbpaste:xclip\x20\x2dselection\x20c\x20\x2do
 SETUVAR _fish_abbr_za:zoxide\x20add
 SETUVAR _fish_abbr_zi:z\x20\x2di
 SETUVAR _fish_abbr_zq:zoxide\x20query

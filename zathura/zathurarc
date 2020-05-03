@@ -2,10 +2,11 @@
 # See man `man zathurarc'
 
 map <Return> focus_inputbar ":"
+map [fullscreen] <Return> focus_inputbar ":"
+map [index] <Return> focus_inputbar ":"
 
 # Open document in fit-width mode by default
 set adjust-open "best-fit"
-set smooth-scroll true
 
 # One page per row by default
 set pages-per-row 1
@@ -13,16 +14,15 @@ set n-completion-items 25
 
 #stop at page boundries
 set scroll-page-aware "true"
-set smooth-scroll "true"
 set scroll-full-overlap 0.01
 set scroll-step 100
 
 #zoom settings
 set zoom-min 10
-set guioptions ""
+set guioptions "cs"
 
 # colors
-set font "DejaVuSansMono Nerd Font Book 10"
+set font "DejaVuSansMono Nerd Font, Book, 12"
 set default-bg "#1B1D1E" #00
 set default-fg "#F7F7F6" #01
 
@@ -47,8 +47,8 @@ set completion-highlight-bg "#A4E400" #0C
 set completion-bg "#303030" #02
 set completion-fg "#E0E0E0" #0C
 
-set notification-bg "#A4E400" #0B
-set notification-fg "#1B1D1" #00
+set notification-fg "#A4E400" #0B
+set notification-bg "#1B1D11" #00
 
 set recolor "false"
 set recolor-lightcolor "#1B1D1E" #00
