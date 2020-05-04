@@ -62,12 +62,12 @@ set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
 set -U FZF_FIND_FILE_COMMAND 'rg --files --no-messages'
 set -U FZF_DEFAULT_OPTS '--reverse --height 40% --color=bg+:#293739,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
 
-set -U FZF_PREVIEW_DIR_CMD "ls"
+set -U FZF_PREVIEW_DIR_CMD "exa"
 set -U FZF_ENABLE_OPEN_PREVIEW 1
 set -U FZF_ENABLE_FILE_PREVIEW 1
 set -U FZF_ENABLE_DIR_PREVIEW 1
 set -U FZF_LEGACY_KEYBINDINGS 1
-set -U FZF_TMUX 1
+set -U FZF_TMUX 0
 
 set -x LESS -R
 
