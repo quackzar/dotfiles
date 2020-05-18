@@ -14,6 +14,7 @@ set -gx PATH "$GOBIN" $PATH
 # set -gx MANPATH "/usr/local/texlive/2019basic/texmf-dist/doc/man" $MANPATH
 
 set -gx EDITOR "nvim"
+set -gx PAGER "LESS -R"
 
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
@@ -50,6 +51,7 @@ switch (uname)
 
         set -gx XDG_CONFIG_HOME "/Users/mikkelmadsen/.config"
         alias skim 'open /Applications/Skim.app'
+        set -gx PATH "$HOME/.local/bin" $PATH
     case Linux
         set -gx XDG_CONFIG_HOME "/home/quack/.config"
         alias pbcopy 'xclip -selection clipboard'
