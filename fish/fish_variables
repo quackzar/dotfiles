@@ -22,7 +22,9 @@ SETUVAR _fish_abbr_pbpaste:xclip\x20\x2dselection\x20c\x20\x2do
 SETUVAR _fish_abbr_za:zoxide\x20add
 SETUVAR _fish_abbr_zi:z\x20\x2di
 SETUVAR _fish_abbr_zq:zoxide\x20query
+SETUVAR _fish_abbr_zqi:zoxide\x20query\x20\x2di
 SETUVAR _fish_abbr_zr:zoxide\x20remove
+SETUVAR _fish_abbr_zri:zoxide\x20remove\x20\x2di
 SETUVAR budspencer_colors:272822\x1eF92672\x1e66D9EF\x1eFD971F\x1eA6E22E\x1eff6600\x1eff0000\x1eff0033\x1e3300ff\x1e0000ff\x1e00ffff\x1e00ff00
 SETUVAR budspencer_cursors:\x5c033\x5d12\x3b\x230000ff\x5c007\x1e\x5c033\x5d12\x3b\x23A6E22E\x5c007\x1e\x5c033\x5d12\x3b\x23ff0033\x5c007\x1e\x5c033\x5d12\x3b\x233300ff\x5c007
 SETUVAR budspencer_day:000000\x1e333333\x1e666666\x1effffff\x1effff00\x1eff6600\x1eff0000\x1eff0033\x1e3300ff\x1e00aaff\x1e00ffff\x1e00ff00

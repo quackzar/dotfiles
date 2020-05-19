@@ -51,6 +51,7 @@ switch (uname)
         set -gx XDG_CONFIG_HOME "/Users/mikkelmadsen/.config"
         alias skim 'open /Applications/Skim.app'
     case Linux
+        set -gx PATH "$HOME/.local/bin" $PATH
         set -gx XDG_CONFIG_HOME "/home/quack/.config"
         alias pbcopy 'xclip -selection clipboard'
         alias pbpaste 'xclip -selection clipboard -o'
