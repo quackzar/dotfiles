@@ -14,7 +14,7 @@ set -gx PATH "$GOBIN" $PATH
 # set -gx MANPATH "/usr/local/texlive/2019basic/texmf-dist/doc/man" $MANPATH
 
 set -gx EDITOR "nvim"
-set -gx PAGER "LESS -R"
+set -gx PAGER "less -R"
 
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
@@ -72,7 +72,7 @@ set -U FZF_ENABLE_DIR_PREVIEW 1
 set -U FZF_LEGACY_KEYBINDINGS 1
 set -U FZF_TMUX 0
 
-set -x LESS -R
+set -x LESS '-R'
 
 # Spacefish colors
 set SPACEFISH_GIT_BRANCH_COLOR FF9700
