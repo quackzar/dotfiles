@@ -25,7 +25,9 @@ alias vim 'nvim'
 alias vi 'nvim'
 alias vimdiff 'nvim -d'
 
-alias ls 'exa'
+if type -q 'exa'
+    alias ls 'exa'
+end
 alias make 'colormake'
 
 alias d 'kitty +kitten diff'
