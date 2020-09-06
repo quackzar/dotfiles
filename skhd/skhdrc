@@ -13,7 +13,15 @@ alt - y ; yabai
 yabai < alt - y ; default
 yabai < escape; default
 
+# alt + escape : skhd --reload
+
 # default < cmd - return : bash /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+
+# change gaps and padding
+alt + shift - y : yabai -m space --gap abs:0; yabai -m space --padding abs:0:0:0:0
+alt + shift - u : yabai -m space --gap abs:5; yabai -m space --padding abs:5:5:5:5
+alt + shift - i : yabai -m space --gap abs:10; yabai -m space --padding abs:10:10:10:10
+alt + shift - o : yabai -m space --gap abs:20; yabai -m space --padding abs:20:20:20:20
 
 #
 # YABAI MODE MAPPINGS
