@@ -3,7 +3,6 @@ set -gx PATH "$HOME/.opam/default/bin" $PATH
 set -gx PATH "$HOME/.gem/ruby/2.3.0/bin" $PATH
 set -gx PATH "$HOME/.gem/ruby/2.6.0/bin" $PATH
 set -gx PATH "$HOME/.cargo/bin" $PATH
-set -gx PATH "$HOME/Library/Python/3.7/bin" $PATH
 set -gx PATH "$HOME/.ghcup/bin" $PATH
 
 set -gx GOPATH "$HOME/go"
@@ -38,8 +37,6 @@ alias opacity 'kitty @ set-background-opacity -a'
 
 switch (uname)
     case Darwin
-        set -gx PATH "/Library/Frameworks/Python.framework/Versions/3.6/bin" $PATH
-        set -gx PATH "/Users/mikkelmadsen/Library/Python/3.6/bin" $PATH
         set -gx PATH "/usr/local/texlive/2019basic/bin/x86_64-darwin" $PATH
         # Turn yabai's statusbar on or off
         alias statusbar 'yabai -m config status_bar'
@@ -49,7 +46,8 @@ switch (uname)
         alias border 'yabai -m config window_border'
 
         # Toggle the macOS menubar from on to auto.
-        alias menubar 'osascript ~/Scripts/toggle_menubar.scpt'
+        alias menubar '~/Scripts/toggle_menubar.scpt'
+        alias file-clipbaord '~/Scripts/file-clipboard.scpt'
 
         set -gx XDG_CONFIG_HOME "/Users/mikkelmadsen/.config"
         alias skim 'open /Applications/Skim.app'
