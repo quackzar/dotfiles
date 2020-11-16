@@ -82,4 +82,6 @@ set SPACEFISH_GIT_STATUS_COLOR FF9700
 bind \cy forward-bigword
 test -r $HOME/.opam/opam-init/init.fish && . $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null || true
 
-zoxide init fish | source
+if type -q zoxide
+	zoxide init fish | source
+end
