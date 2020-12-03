@@ -4,6 +4,7 @@ set -gx PATH "$HOME/.gem/ruby/2.3.0/bin" $PATH
 set -gx PATH "$HOME/.gem/ruby/2.6.0/bin" $PATH
 set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx PATH "$HOME/.ghcup/bin" $PATH
+set -gx PATH "$HOME/.dotnet/tools" $PATH
 
 set -gx GOPATH "$HOME/go"
 set -gx GOBIN "$GOPATH/bin"
@@ -14,6 +15,7 @@ set -gx PATH "$GOBIN" $PATH
 
 set -gx EDITOR "nvim"
 set -gx PAGER "less -R"
+set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
@@ -31,6 +33,19 @@ alias make 'colormake'
 
 alias d 'kitty +kitten diff'
 alias icat 'kitty +kitten icat'
+
+function edit_cmd --description 'Edit cmdline in editor'
+        set -l f (mktemp --tmpdir=.)
+        set -l p (commandline -C)
+        commandline -b > $f
+        vim -c set\ ft=fish $f
+        commandline -r (more $f)
+        commandline -C $p
+        rm $f
+end
+
+bind \cx\ce edit_cmd
+
 
 # Change kitty's opacity, range {x | 0 <= x <= 1 }
 alias opacity 'kitty @ set-background-opacity -a'
@@ -57,9 +72,14 @@ switch (uname)
         set -gx XDG_CONFIG_HOME "/home/quack/.config"
         alias pbcopy 'xclip -selection clipboard'
         alias pbpaste 'xclip -selection clipboard -o'
+        set -gx JAVA_HOME '/usr/lib/jvm/default'
+        alias open 'xdg-open 2>/dev/null'
+        alias xdg-open 'xdg-open 2>/dev/null'
+        alias mon2cam 'deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts'
 end
 
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
+
 
 set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
 set -U FZF_FIND_FILE_COMMAND 'rg --files --no-messages'
