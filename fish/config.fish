@@ -1,4 +1,3 @@
-set -gx PATH "/usr/local/bin" $PATH
 set -gx PATH "$HOME/.opam/default/bin" $PATH
 set -gx PATH "$HOME/.gem/ruby/2.3.0/bin" $PATH
 set -gx PATH "$HOME/.gem/ruby/2.6.0/bin" $PATH
@@ -10,11 +9,10 @@ set -gx GOPATH "$HOME/go"
 set -gx GOBIN "$GOPATH/bin"
 set -gx PATH "$GOBIN" $PATH
 
+alias x86brew 'arch -x86_64 /usr/local/bin/brew'
 
-# set -gx MANPATH "/usr/local/texlive/2019basic/texmf-dist/doc/man" $MANPATH
-
-set -gx EDITOR "nvim"
 set -gx PAGER "less -R"
+set -gx LESS "-R"
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -gx LC_ALL "en_US.UTF-8"
@@ -22,14 +20,20 @@ set -gx LANG "en_US.UTF-8"
 
 alias python 'python3'
 alias pip 'pip3'
-alias vim 'nvim'
-alias vi 'nvim'
-alias vimdiff 'nvim -d'
+
+if type -q 'nvim'
+    set -gx EDITOR "nvim"
+    alias vim 'nvim'
+    alias vi 'nvim'
+    alias vimdiff 'nvim -d'
+end
 
 if type -q 'exa'
     alias ls 'exa'
 end
-alias make 'colormake'
+if type -q 'colormake'
+    alias make 'colormake'
+end
 
 alias d 'kitty +kitten diff'
 alias icat 'kitty +kitten icat'
@@ -64,12 +68,10 @@ switch (uname)
         alias menubar '~/Scripts/toggle_menubar.scpt'
         alias file-clipbaord '~/Scripts/file-clipboard.scpt'
 
-        set -gx XDG_CONFIG_HOME "/Users/mikkelmadsen/.config"
         alias skim 'open /Applications/Skim.app'
         set -gx PATH "$HOME/.local/bin" $PATH
     case Linux
         set -gx PATH "$HOME/.local/bin" $PATH
-        set -gx XDG_CONFIG_HOME "/home/quack/.config"
         alias pbcopy 'xclip -selection clipboard'
         alias pbpaste 'xclip -selection clipboard -o'
         set -gx JAVA_HOME '/usr/lib/jvm/default'
@@ -78,6 +80,7 @@ switch (uname)
         alias mon2cam 'deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts'
 end
 
+set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 
@@ -105,3 +108,6 @@ test -r $HOME/.opam/opam-init/init.fish && . $HOME/.opam/opam-init/init.fish > /
 if type -q zoxide
 	zoxide init fish | source
 end
+
+test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
