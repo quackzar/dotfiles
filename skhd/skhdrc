@@ -13,9 +13,9 @@ lalt - y ; yabai
 yabai < lalt - y ; default
 yabai < escape; default
 
-# lalt + escape : skhd --reload
 
-# default < cmd - return : bash /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+lalt - escape : skhd --reload
+lalt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # change gaps and padding
 lalt + shift - y : yabai -m space --gap abs:0; yabai -m space --padding abs:0:0:0:0
@@ -180,4 +180,9 @@ yabai < 0x1E : yabai -m window --swap next # ]
 yabai < ctrl - a : yabai -m space --layout bsp;\
     yabai -m config active_window_border_color 0xfff92672
 yabai < ctrl - d : yabai -m space --layout float;\
+    yabai -m config active_window_border_color 0xff62d8f1
+
+ctrl + lalt - a : yabai -m space --layout bsp;\
+    yabai -m config active_window_border_color 0xfff92672
+ctrl + lalt - d : yabai -m space --layout float;\
     yabai -m config active_window_border_color 0xff62d8f1

@@ -11,16 +11,17 @@ set -gx PATH "$HOME/.local/bin" $PATH
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 
 function fish_greeting
-    printf 'Welcome to fish, %s! Powered by %s' $USER (arch)
+    printf "Welcome to fish, %s! You are running %s powered by %s" $USER (uname) (arch)
 end
 
 set -gx PAGER "less -R"
 set -gx LESS "-R"
-set -gx BAT_PAGER "less -RF"
+set -gx BAT_PAGER "less -R"
 set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
+
 
 alias python 'python3'
 alias pip 'pip3'
@@ -59,6 +60,7 @@ alias opacity 'kitty @ set-background-opacity -a'
 
 switch (uname)
     case Darwin
+        set SDKROOT (xcrun --sdk macosx --show-sdk-path)
         alias x86brew 'arch -x86_64 /usr/local/bin/brew'
         # Toggle the macOS menubar from on to auto.
         alias menubar '~/Scripts/toggle_menubar.scpt'
@@ -94,7 +96,7 @@ set SPACEFISH_GIT_STATUS_COLOR FF9700
 bind \cy forward-bigword
 
 if type -q zoxide
-	zoxide init fish | source
+    zoxide init fish | source
 end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish

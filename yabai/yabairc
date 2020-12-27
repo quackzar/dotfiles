@@ -52,14 +52,20 @@ yabai -m config right_padding                15
 yabai -m config window_gap                   10
 
 # Mouse support
-yabai -m config mouse_modifier fn
-yabai -m config mouse_action1 move
-yabai -m config mouse_action2 resize
+yabai -m config mouse_modifier               alt
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            swap
 
 
 # Rules
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Finder$" title="Info$" manage=off
+yabai -m rule --add app="^Finder$" title="^Connecting to Server$" manage=off
+yabai -m rule --add app="^NetAuthAgent$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
+yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
 
 
