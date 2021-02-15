@@ -54,4 +54,4 @@ SETUVAR fish_pager_color_completion:75715E
 SETUVAR fish_pager_color_description:49483E
 SETUVAR fish_pager_color_prefix:F8F8F2
 SETUVAR fish_pager_color_progress:F8F8F2
-SETUVAR fish_user_paths:/home/quack/\x2efzf/bin
+SETUVAR fish_user_paths:/home/quack/\x2efzf/bin\x1e/opt/homebrew/opt/fzf/bin

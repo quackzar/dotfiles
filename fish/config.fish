@@ -8,6 +8,7 @@ set -gx PATH "$GOBIN" $PATH
 
 set -gx PATH "$HOME/.local/bin" $PATH
 
+
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 
 function fish_greeting
@@ -61,6 +62,7 @@ alias opacity 'kitty @ set-background-opacity -a'
 switch (uname)
     case Darwin
         set SDKROOT (xcrun --sdk macosx --show-sdk-path)
+        set -gx PATH '/opt/homebrew/opt/llvm/bin/' $PATH
         alias x86brew 'arch -x86_64 /usr/local/bin/brew'
         # Toggle the macOS menubar from on to auto.
         alias menubar '~/Scripts/toggle_menubar.scpt'
@@ -88,6 +90,7 @@ set -U FZF_ENABLE_DIR_PREVIEW 1
 set -U FZF_LEGACY_KEYBINDINGS 1
 set -U FZF_TMUX 0
 
+set -gx PASSWORD_STORE_ENABLE_EXTENSIONS "true"
 
 # Spacefish colors
 set SPACEFISH_GIT_BRANCH_COLOR FF9700

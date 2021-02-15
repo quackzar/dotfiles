@@ -61,12 +61,17 @@ yabai -m config mouse_drop_action            swap
 # Rules
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
+yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Finder$" title="Info$" manage=off
+yabai -m rule --add app="^Finder$" title="^Connect to Server$" manage=off
 yabai -m rule --add app="^Finder$" title="^Connecting to Server$" manage=off
+yabai -m rule --add title="Preferences$" manage=off
 yabai -m rule --add app="^NetAuthAgent$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^Battle.net$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
+
 
 
 echo "yabai configuration loaded.."
