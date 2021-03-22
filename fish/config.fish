@@ -92,14 +92,16 @@ set -U FZF_TMUX 0
 
 set -gx PASSWORD_STORE_ENABLE_EXTENSIONS "true"
 
-# Spacefish colors
-set SPACEFISH_GIT_BRANCH_COLOR FF9700
-set SPACEFISH_GIT_STATUS_COLOR FF9700
+set -U __done_min_cmd_duration 8000
 
 bind \cy forward-bigword
 
 if type -q zoxide
     zoxide init fish | source
 end
+
+# if type -q starship
+#     starship init fish | source
+# end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
