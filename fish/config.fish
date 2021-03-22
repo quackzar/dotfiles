@@ -17,8 +17,6 @@ end
 
 set -gx PAGER "less -R"
 set -gx LESS "-R"
-set -gx BAT_PAGER "less -R"
-set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
 set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
@@ -32,6 +30,12 @@ if type -q 'nvim'
     alias vim 'nvim'
     alias vi 'nvim'
     alias vimdiff 'nvim -d'
+end
+
+if type -q 'bat'
+    set -gx BAT_PAGER "less -R"
+    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
 end
 
 if type -q 'exa'
@@ -79,7 +83,6 @@ end
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 
-set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
 set -U FZF_FIND_FILE_COMMAND 'rg --files --no-messages'
 set -U FZF_DEFAULT_OPTS '--reverse --height 40% --color=bg+:#293739,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
 
@@ -99,9 +102,5 @@ bind \cy forward-bigword
 if type -q zoxide
     zoxide init fish | source
 end
-
-# if type -q starship
-#     starship init fish | source
-# end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
