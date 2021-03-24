@@ -12,7 +12,7 @@ set -gx PATH "$HOME/.local/bin" $PATH
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 
 function fish_greeting
-    printf "Welcome to fish, %s! You are running %s powered by %s" $USER (uname) (uname -m)
+    printf "Welcome to fish, %s! You are running %s powered by %s\n" $USER (uname) (uname -m)
 end
 
 set -gx PAGER "less -R"
