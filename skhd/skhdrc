@@ -71,8 +71,8 @@ lalt + shift - j : yabai -m window --swap south
 lalt + shift - k : yabai -m window --swap north
 lalt + shift - l : yabai -m window --swap east
 
-lalt - kVK_0x21 :  yabai -m space --focus prev
-lalt - kVK_0x1E :  yabai -m space --focus next
+lalt - 0x21 :  yabai -m space --focus prev
+lalt - 0x1E :  yabai -m space --focus next
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 shift + cmd - n : yabai -m space --create && \
