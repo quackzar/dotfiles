@@ -104,3 +104,5 @@ if type -q zoxide
 end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+source "$HOME/.config/fish/monokai.fish"
