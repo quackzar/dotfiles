@@ -9,6 +9,8 @@ set -gx PATH "$GOBIN" $PATH
 set -gx PATH "$HOME/.local/bin" $PATH
 
 
+set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
+
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 
 function fish_greeting
