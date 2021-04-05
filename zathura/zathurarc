@@ -22,8 +22,7 @@ set zoom-min 10
 set guioptions "cs"
 
 set synctex true
-set synctex-editor-command "nvr --remote-silent %f -c %l"
-
+set synctex-editor-command 'nvr --remote +"%line" "%file"'
 # colors
 set font "DejaVuSansMono Nerd Font, Book, 12"
 set default-bg "#191919" #"#1B1D1E" #00
