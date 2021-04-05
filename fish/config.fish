@@ -9,8 +9,6 @@ set -gx PATH "$GOBIN" $PATH
 set -gx PATH "$HOME/.local/bin" $PATH
 
 
-set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
-
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 
 function fish_greeting
@@ -42,6 +40,7 @@ end
 
 if type -q 'exa'
     alias ls 'exa'
+    set -U FZF_PREVIEW_DIR_CMD "exa"
 end
 if type -q 'colormake'
     alias make 'colormake'
@@ -59,20 +58,23 @@ if type -q 'yabai'
     alias border 'yabai -m config window_border'
 end
 
-alias d 'kitty +kitten diff'
-alias icat 'kitty +kitten icat'
+if test $TERM = 'xterm-kitty'
+    alias d 'kitty +kitten diff'
+    alias icat 'kitty +kitten icat'
+    alias ssh 'kitty +kitten ssh'
+    # Change kitty's opacity, range {x | 0 <= x <= 1 }
+    alias opacity 'kitty @ set-background-opacity -a'
+end
 
-# Change kitty's opacity, range {x | 0 <= x <= 1 }
-alias opacity 'kitty @ set-background-opacity -a'
 
 switch (uname)
     case Darwin
         set SDKROOT (xcrun --sdk macosx --show-sdk-path)
         set -gx PATH '/opt/homebrew/opt/llvm/bin/' $PATH
-        alias x86brew 'arch -x86_64 /usr/local/bin/brew'
         # Toggle the macOS menubar from on to auto.
         alias menubar '~/Scripts/toggle_menubar.scpt'
         alias file-clipbaord '~/Scripts/file-clipboard.scpt'
+        set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
     case Linux
         alias pbcopy 'xclip -selection clipboard'
         alias pbpaste 'xclip -selection clipboard -o'
@@ -88,7 +90,6 @@ set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 set -U FZF_FIND_FILE_COMMAND 'rg --files --no-messages'
 set -U FZF_DEFAULT_OPTS '--reverse --height 40% --color=bg+:#293739,border:#808080,spinner:#E6DB74,hl:#7E8E91,fg:#F8F8F2,header:#7E8E91,info:#A6E22E,pointer:#A6E22E,marker:#F92672,fg+:#F8F8F2,prompt:#F92672,hl+:#F92672'
 
-set -U FZF_PREVIEW_DIR_CMD "exa"
 set -U FZF_ENABLE_OPEN_PREVIEW 1
 set -U FZF_ENABLE_FILE_PREVIEW 1
 set -U FZF_ENABLE_DIR_PREVIEW 1
