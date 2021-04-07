@@ -3,16 +3,26 @@ config:
   backup: true
   create: true
   dotpath: dotfiles
+  link_dotfile_default: link
+actions:
+  vim-plug: nvim +PlugClean +PlugInstall +qall
+  fisher: ~/.config/fish/fisher_bootstrap
+  fish_dotdrop: echo 'alias -s dotdrop $PWD/dotdrop.sh' | fish
 dotfiles:
   nvim:
     dst: ~/.config/nvim
     src: config/nvim
+    actions:
+      - vim-plug
   bat:
     dst: ~/.config/bat
     src: config/bat
   fish:
     dst: ~/.config/fish
     src: config/fish
+    actions:
+      - fisher
+      - fish_dotdrop
   htop:
     dst: ~/.config/htop
     src: config/htop
@@ -50,9 +60,30 @@ dotfiles:
     dst: ~/.config/rofi
     src: config/rofi
 profiles:
-  Chesire-Cat.local:
+  Cheshire-Cat.local:
     dotfiles:
-      - ALL
+      - fish
+      - nvim
+      - kitty
+      - bat
+      - htop
+      - ripgrep
+      - neofetch
+      - lf
+      - karabiner
+      - skhd
+      - yabai
   Juche:
     dotfiles:
-      - ALL
+      - fish
+      - nvim
+      - kitty
+      - bat
+      - htop
+      - ripgrep
+      - neofetch
+      - lf
+      - rofi
+      - bspwm
+      - sxhkd
+      - zathura
