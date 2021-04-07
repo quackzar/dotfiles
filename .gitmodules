@@ -1,6 +1,7 @@
 [submodule "nvim"]
 	path = dotfiles/config/nvim
 	url = git@github.com:Quacktiamauct/vim-dotfiles.git
+    branch = master
 [submodule "dotdrop"]
 	path = dotdrop
 	url = https://github.com/deadc0de6/dotdrop.git
