@@ -5,7 +5,7 @@ config:
   dotpath: dotfiles
   link_dotfile_default: link
 actions:
-  vim-plug: nvim +PlugClean +PlugInstall +qall
+  vim-plug: nvim --headless +PlugClean +PlugInstall +qall
   fisher: ~/.config/fish/fisher_bootstrap
   fish_dotdrop: echo 'alias -s dotdrop $PWD/dotdrop.sh' | fish
 dotfiles:
@@ -73,7 +73,7 @@ profiles:
       - karabiner
       - skhd
       - yabai
-  Juche:
+  juche:
     dotfiles:
       - fish
       - nvim
