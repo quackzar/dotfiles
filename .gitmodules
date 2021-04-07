@@ -1,5 +1,5 @@
 [submodule "nvim"]
-	path = config/nvim
+	path = dotfiles/config/nvim
 	url = git@github.com:Quacktiamauct/vim-dotfiles.git
 [submodule "dotdrop"]
 	path = dotdrop

@@ -1,6 +1,58 @@
+# vim: shiftwidth=2
 config:
   backup: true
   create: true
   dotpath: dotfiles
 dotfiles:
+  nvim:
+    dst: ~/.config/nvim
+    src: config/nvim
+  bat:
+    dst: ~/.config/bat
+    src: config/bat
+  fish:
+    dst: ~/.config/fish
+    src: config/fish
+  htop:
+    dst: ~/.config/htop
+    src: config/htop
+  bspwm:
+    dst: ~/.config/bspwm
+    src: config/bspwm
+  lf:
+    dst: ~/.config/lf
+    src: config/lf
+  yabai:
+    dst: ~/.config/yabai
+    src: config/yabai
+  zathura:
+    dst: ~/.config/zathura
+    src: config/zathura
+  skhd:
+    dst: ~/.config/skhd
+    src: config/skhd
+  sxhkd:
+    dst: ~/.config/sxhkd
+    src: config/sxhkd
+  karabiner:
+    dst: ~/.config/karabiner
+    src: config/karabiner
+  neofetch:
+    dst: ~/.config/neofetch
+    src: config/neofetch
+  kitty:
+    dst: ~/.config/kitty
+    src: config/kitty
+  ripgrep:
+    dst: ~/.config/ripgrep
+    src: config/ripgrep
+  rofi:
+    dst: ~/.config/rofi
+    src: config/rofi
 profiles:
+  Chesire-Cat.local:
+    dotfiles:
+      - ALL
+  Juche:
+    dotfiles:
+      - ALL
