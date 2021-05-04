@@ -70,11 +70,13 @@ end
 switch (uname)
     case Darwin
         set SDKROOT (xcrun --sdk macosx --show-sdk-path)
-        set -gx PATH '/opt/homebrew/opt/llvm/bin/' $PATH
+        # set -gx PATH '/opt/homebrew/opt/llvm/bin/' $PATH
         # Toggle the macOS menubar from on to auto.
         alias menubar '~/Scripts/toggle_menubar.scpt'
         alias file-clipbaord '~/Scripts/file-clipboard.scpt'
         set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
+
+        set -g PATH '/opt/homebrew/opt/llvm/bin' $PATH
     case Linux
         alias pbcopy 'xclip -selection clipboard'
         alias pbpaste 'xclip -selection clipboard -o'

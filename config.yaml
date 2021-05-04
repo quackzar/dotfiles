@@ -59,6 +59,12 @@ dotfiles:
   rofi:
     dst: ~/.config/rofi
     src: config/rofi
+  git:
+    dst: ~/.gitconfig
+    src: gitconfig
+  gitignore:
+    dst: ~/.gitignore_global
+    src: gitignore_global
 profiles:
   Cheshire-Cat.local:
     dotfiles:
@@ -73,6 +79,8 @@ profiles:
       - karabiner
       - skhd
       - yabai
+      - git
+      - gitignore
   juche:
     dotfiles:
       - fish
@@ -87,3 +95,5 @@ profiles:
       - bspwm
       - sxhkd
       - zathura
+      - git
+      - gitignore
