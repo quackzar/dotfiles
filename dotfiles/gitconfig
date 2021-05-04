@@ -4,9 +4,6 @@
     autocrlf = input
     editor = nvim
     pager = delta
-[user]
-    name = Mikkel Madsen
-    email = mikkel.wienberg@gmail.com
 [pull]
     rebase = true
 [submodule]

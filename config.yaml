@@ -60,9 +60,11 @@ dotfiles:
     dst: ~/.config/rofi
     src: config/rofi
   git:
+    link: nolink
     dst: ~/.gitconfig
     src: gitconfig
   gitignore:
+    link: nolink
     dst: ~/.gitignore_global
     src: gitignore_global
 profiles:
