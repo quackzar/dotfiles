@@ -7,6 +7,7 @@ killall -9 sxhkd
 # killall -9 plasmashell
 sxhkd &
 picom -b --config $HOME/.config/picom/picom.conf &
+wmname LG3D
 bspc config border_width         2
 bspc config window_gap          12
 bspc config top_padding          0
