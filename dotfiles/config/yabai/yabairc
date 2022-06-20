@@ -69,6 +69,6 @@ yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^Battle.net$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
 yabai -m rule --add app="LuLu" manage=off
-
+yabai -m rule --add title="Keeper Desktop Applet" manage=off
 
 echo "yabai configuration loaded.."

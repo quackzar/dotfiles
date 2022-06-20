@@ -83,6 +83,21 @@ profiles:
       - yabai
       - git
       - gitignore
+  Mad-Hatter.local:
+    dotfiles:
+      - fish
+      - nvim
+      - kitty
+      - bat
+      - htop
+      - ripgrep
+      - neofetch
+      - lf
+      - karabiner
+      - skhd
+      - yabai
+      - git
+      - gitignore
   juche:
     dotfiles:
       - fish

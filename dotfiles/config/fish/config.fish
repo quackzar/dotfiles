@@ -75,9 +75,17 @@ switch (uname)
         # Toggle the macOS menubar from on to auto.
         alias menubar '~/Scripts/toggle_menubar.scpt'
         alias file-clipbaord '~/Scripts/file-clipboard.scpt'
-        set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
+        # set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
 
-        set -g PATH '/opt/homebrew/opt/llvm/bin' $PATH
+        # set -gx LDFLAGS "-L/usr/local/opt/python@3.10/lib"
+        # set -gx PKG_CONFIG_PATH "/usr/local/opt/python@3.10/lib/pkgconfig"
+
+        # set -g PATH '/opt/homebrew/opt/llvm/bin' $PATH
+        set -g ANDROID_HOME ~/Library/Android/sdk
+        set -g ANDROID_SDK_ROOT ~/Library/Android/sdk
+        set -g PATH $ANDROID_HOME/tools $PATH
+        set -g PATH $ANDROID_HOME/platform-tools $PATH
+
     case Linux
         alias pbcopy 'xclip -selection clipboard'
         alias pbpaste 'xclip -selection clipboard -o'
@@ -102,5 +110,20 @@ if type -q zoxide
 end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
+
+# if type -q starship
+#     starship init fish | source
+# end
+
+# set -g VIRTUALFISH_PLUGINS "auto_activation compat_aliases"
+
+if type -q kubecolor
+    function kubectl
+        kubecolor $argv
+    end
+end
+
+set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
+set -gx HOMEBREW_CASK_OPTS --require-sha
 
 source "$HOME/.config/fish/monokai.fish"
