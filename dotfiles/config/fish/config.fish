@@ -59,14 +59,6 @@ if type -q 'yabai'
     alias border 'yabai -m config window_border'
 end
 
-if test $TERM = 'xterm-kitty'
-    alias d 'kitty +kitten diff'
-    alias icat 'kitty +kitten icat'
-    alias ssh 'kitty +kitten ssh'
-    # Change kitty's opacity, range {x | 0 <= x <= 1 }
-    alias opacity 'kitty @ set-background-opacity -a'
-end
-
 
 switch (uname)
     case Darwin
@@ -87,6 +79,18 @@ switch (uname)
         alias mon2cam 'deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts'
 end
 
+
+if test $TERM = 'xterm-kitty'
+    alias d 'kitty +kitten diff'
+    alias icat 'kitty +kitten icat'
+    alias ssh 'kitty +kitten ssh'
+    # Change kitty's opacity, range {x | 0 <= x <= 1 }
+    alias opacity 'kitty @ set-background-opacity -a'
+    # alias pbcopy 'kitty +kitten clipboard'
+    # alias pbpaste 'kitty +kitten clipboard --get-clipboard'
+end
+
+
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
 set fzf_fd_opts --hidden --exclude=.git
@@ -96,6 +100,7 @@ set -gx PASSWORD_STORE_ENABLE_EXTENSIONS "true"
 set -U __done_min_cmd_duration 8000
 
 bind \cy forward-bigword
+bind \cj forward-bigword
 
 if type -q zoxide
     zoxide init fish | source

@@ -16,7 +16,7 @@ yabai < escape; default
 #
 
 # terminal emulator
-lalt - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+lalt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # reload files
 lalt - escape : skhd --reload
