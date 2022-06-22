@@ -6,7 +6,7 @@
 # Enter with <M-x> in default mode
 # Exit with <esc> and return to default mode
 :: yabai : yabai -m config window_border on
-lalt - y ; yabai
+alt - y ; yabai
 yabai < lalt - y ; default
 yabai < escape; default
 
@@ -15,11 +15,10 @@ yabai < escape; default
 # ==============================
 #
 
-# terminal emulator
 lalt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 
 # reload files
-lalt - escape : skhd --reload
+alt - escape : skhd --reload
 
 #
 # YABAI hotkeys
