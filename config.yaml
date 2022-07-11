@@ -53,6 +53,9 @@ dotfiles:
   kitty:
     dst: ~/.config/kitty
     src: config/kitty
+  wezterm:
+    dst ~/.config/wezterm
+    src config/wezterm
   ripgrep:
     dst: ~/.config/ripgrep
     src: config/ripgrep
