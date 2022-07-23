@@ -73,6 +73,8 @@ switch (uname)
         # set -gx PKG_CONFIG_PATH "/usr/local/opt/python@3.10/lib/pkgconfig"
 
         # set -g PATH '/opt/homebrew/opt/llvm/bin' $PATH
+        set -g C_INCLUDE_PATH "/opt/homebrew/include" $C_INCLUDE_PATH
+        set -g CPLUS_INCLUDE_PATH "/opt/homebrew/include" $CPLUS_INCLUDE_PATH
         set -g ANDROID_HOME ~/Library/Android/sdk
         set -g ANDROID_SDK_ROOT ~/Library/Android/sdk
         set -g PATH $ANDROID_HOME/tools $PATH
