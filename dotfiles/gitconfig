@@ -3,7 +3,7 @@
     excludesfile = ~/.gitignore_global
     autocrlf = input
     editor = nvim
-    pager = delta
+    pager = delta --pager='less -F'
 [pull]
     rebase = true
 [submodule]
@@ -30,7 +30,7 @@
     path = nvim
     keepBackup = false
 [mergetool "nvim"]
-  cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [difftool]
     prompt = false
 [difftool.latex]
@@ -52,4 +52,7 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
-
+[tag]
+    sort = authordate
+[advice]
+    detachedHead = false
