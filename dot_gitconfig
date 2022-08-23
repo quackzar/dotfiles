@@ -47,6 +47,7 @@
     files = !git diff --name-only $(git merge-base HEAD \"$REVIEW_BASE\")
     stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
     rename-tag = "!sh -c 'set -e;git tag $2 $1; git tag -d $1;git push origin :refs/tags/$1;git push --tags' -"
+    r = !/usr/local/bin/git-rbs
 [filter "lfs"]
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
