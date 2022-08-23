@@ -1,4 +1,3 @@
-[submodule "nvim"]
-	path = dotfiles/config/nvim
+[submodule "config/nvim"]
+	path = config/nvim
 	url = git@github.com:Quacktiamauct/vim-dotfiles.git
-    branch = master
