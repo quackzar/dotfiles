@@ -109,8 +109,9 @@ set -gx PASSWORD_STORE_ENABLE_EXTENSIONS "true"
 
 set -U __done_min_cmd_duration 8000
 
-bind \cy forward-bigword
+bind \cy accept-autosuggestion
 bind \cj forward-bigword
+bind \e\[106\;5u forward-bigword
 
 if type -q zoxide
     zoxide init fish | source
@@ -124,7 +125,7 @@ test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shel
 
 # set -g VIRTUALFISH_PLUGINS "auto_activation compat_aliases"
 
-if type -q kubecolor
+if type -q kubecolor && type -q kubectl
     function kubectl
         kubecolor $argv
     end
