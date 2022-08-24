@@ -1,3 +1,3 @@
 ["nvim"]
     type = "git-repo"
-    url = "https://github.com/Quacktiamauct/vim-dotfiles"
+    url = "git@github.com:Quacktiamauct/vim-dotfiles.git"
