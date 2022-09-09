@@ -35,7 +35,7 @@ alt + shift - u : yabai -m space --gap abs:5; yabai -m space --padding abs:5:5:5
 alt + shift - i : yabai -m space --gap abs:10; yabai -m space --padding abs:10:10:10:10
 alt + shift - o : yabai -m space --gap abs:20; yabai -m space --padding abs:20:20:20:20
 
-alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
+alt - m : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # left right brackets, dynamic gaps
 # alt + shift - kVK_0x21 : ???
