@@ -82,6 +82,15 @@ shift + cmd - n : yabai -m space --create && \
                   yabai -m window --space "${index}" && \
                   yabai -m space --focus "${index}"
 
+
+alt + shift - b : yabai -m space --layout bsp
+alt + shift - f : yabai -m space --layout float
+alt + shift - s : yabai -m window --space prev
+alt + shift - d : yabai -m window --display recent
+alt + ctrl - n : /Users/mikkel/.config/yabai/cycle_clockwise.sh
+alt + ctrl + shift - n : /Users/mikkel/.config/yabai/cycle_counterclockwise.sh
+
+
 #
 # YABAI MODE MAPPINGS
 # ==============================
@@ -145,16 +154,16 @@ yabai < cmd + alt - 0 : yabai -m space --focus 10
 shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
 shift + cmd - z : yabai -m window --space prev; yabai -m space --focus prev
 shift + cmd - c : yabai -m window --space next; yabai -m space --focus next
-# shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
-# shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
-# shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
-# shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
-# shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
-# shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
-# shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
-# shift + cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
-# shift + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
-# shift + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+alt + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
+alt + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+alt + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
+alt + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
+alt + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
+alt + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
+alt + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
+alt + cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
+alt + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
+alt + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus monitor
 yabai < ctrl + alt - x  : yabai -m display --focus recent
