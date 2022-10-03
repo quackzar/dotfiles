@@ -1,12 +1,15 @@
 local wezterm = require 'wezterm';
 return {
-    default_prog = {'/usr/local/bin/fish', '-l'},
+    default_prog = {'/opt/homebrew/bin/fish', '-l'},
     font = wezterm.font_with_fallback({
-        "JetBrains Mono",
-        "Symbols Nerd Font"
+        -- "DejaVuSansMono Nerd Font",
+        "JetBrainsMono Nerd Font",
+        "nonicons",
+        "codicon",
     }),
     harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
-    color_scheme = "Banana Blueberry",
+    default_cursor_style = 'SteadyBar',
+    color_scheme = "Mashup Colors (terminal.sexy)",
     enable_csi_u_key_encoding = true,
     inactive_pane_hsb = {
         saturation = 0.9,

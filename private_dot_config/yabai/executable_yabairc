@@ -60,4 +60,6 @@ yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
 yabai -m rule --add app="LuLu" manage=off
 yabai -m rule --add title="Keeper Desktop Applet" manage=off
 
+setleds ^caps > /dev/null
+
 echo "yabai configuration loaded.."
