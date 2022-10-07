@@ -6,7 +6,7 @@
 # Enter with <M-x> in default mode
 # Exit with <esc> and return to default mode
 :: yabai : yabai -m config window_border on; setleds +caps /dev/null
-alt - x ; yabai
+alt - y ; yabai
 yabai < escape; default
 
 #
@@ -51,7 +51,7 @@ alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
 # toggle window border
-shift + alt - b : yabai -m window --toggle border
+# shift + alt - b : yabai -m window --toggle border
 
 # 
 # focus/swap
@@ -82,8 +82,8 @@ shift + cmd - n : yabai -m space --create && \
                   yabai -m space --focus "${index}"
 
 
-alt + shift - b : yabai -m space --layout bsp
-alt + shift - f : yabai -m space --layout float
+yabai < b : yabai -m space --layout bsp; default
+yabai < f : yabai -m space --layout float; default
 alt + shift - s : yabai -m window --space prev
 alt + shift - d : yabai -m window --display recent
 alt + ctrl - n : /Users/mikkel/.config/yabai/cycle_clockwise.sh
@@ -141,19 +141,19 @@ yabai < cmd + alt - n : yabai -m space --create && \
 yabai < cmd + alt - w : yabai -m space --destroy
 
 # fast focus desktop
-yabai < cmd + alt - x : yabai -m space --focus recent
-yabai < cmd + alt - z : yabai -m space --focus prev
-yabai < cmd + alt - c : yabai -m space --focus next
-yabai < cmd + alt - 1 : yabai -m space --focus 1
-yabai < cmd + alt - 2 : yabai -m space --focus 2
-yabai < cmd + alt - 3 : yabai -m space --focus 3
-yabai < cmd + alt - 4 : yabai -m space --focus 4
-yabai < cmd + alt - 5 : yabai -m space --focus 5
-yabai < cmd + alt - 6 : yabai -m space --focus 6
-yabai < cmd + alt - 7 : yabai -m space --focus 7
-yabai < cmd + alt - 8 : yabai -m space --focus 8
-yabai < cmd + alt - 9 : yabai -m space --focus 9
-yabai < cmd + alt - 0 : yabai -m space --focus 10
+alt - x : yabai -m space --focus recent
+alt - z : yabai -m space --focus prev
+alt - c : yabai -m space --focus next
+yabai < 1 : yabai -m space --focus 1
+yabai < 2 : yabai -m space --focus 2
+yabai < 3 : yabai -m space --focus 3
+yabai < 4 : yabai -m space --focus 4
+yabai < 5 : yabai -m space --focus 5
+yabai < 6 : yabai -m space --focus 6
+yabai < 7 : yabai -m space --focus 7
+yabai < 8 : yabai -m space --focus 8
+yabai < 9 : yabai -m space --focus 9
+yabai < 0 : yabai -m space --focus 10
 
 # send window to desktop and follow focus
 shift + cmd - x : yabai -m window --space recent; yabai -m space --focus recent
@@ -171,12 +171,12 @@ alt + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
 alt + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus monitor
-yabai < ctrl + alt - x  : yabai -m display --focus recent
-yabai < ctrl + alt - z  : yabai -m display --focus prev
-yabai < ctrl + alt - c  : yabai -m display --focus next
-yabai < ctrl + alt - 1  : yabai -m display --focus 1
-yabai < ctrl + alt - 2  : yabai -m display --focus 2
-yabai < ctrl + alt - 3  : yabai -m display --focus 3
+shift + alt - x  : yabai -m display --focus recent
+shift + alt - z  : yabai -m display --focus prev
+shift + alt - c  : yabai -m display --focus next
+yabai < shift - 1  : yabai -m display --focus 1
+yabai < shift - 2  : yabai -m display --focus 2
+yabai < shift - 3  : yabai -m display --focus 3
 
 # increase window size
 yabai < shift - a : yabai -m window --resize left:-20:0
@@ -210,13 +210,6 @@ yabai < x : yabai -m space --mirror x-axis
 # toggle desktop offset
 yabai < alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
-# toggle window fullscreen zoom
-yabai < f : yabai -m window --toggle zoom-fullscreen
-
-# toggle window native fullscreen
-yabai < shift - f : yabai -m window --toggle native-fullscreen
-
-
 # toggle window split type
 alt - e : yabai -m window --toggle split
 
@@ -225,15 +218,3 @@ yabai < space : yabai -m window --swap mouse
 yabai < ctrl - 6 : yabai -m window --swap recent
 yabai < 0x21 : yabai -m window --swap prev # [
 yabai < 0x1E : yabai -m window --swap next # ]
-
-
-# change layout of desktop
-yabai < ctrl - a : yabai -m space --layout bsp;\
-    yabai -m config active_window_border_color 0xfff92672
-yabai < ctrl - d : yabai -m space --layout float;\
-    yabai -m config active_window_border_color 0xff62d8f1
-
-ctrl + alt - a : yabai -m space --layout bsp;\
-    yabai -m config active_window_border_color 0xfff92672
-ctrl + alt - d : yabai -m space --layout float;\
-    yabai -m config active_window_border_color 0xff62d8f1
