@@ -1,9 +1,11 @@
 local wezterm = require 'wezterm';
 return {
+    custom_block_glyphs = true,
     default_prog = {'/opt/homebrew/bin/fish', '-l'},
     font = wezterm.font_with_fallback({
         -- "DejaVuSansMono Nerd Font",
         "JetBrainsMono Nerd Font",
+        "Iosevka",
         "nonicons",
         "codicon",
     }),
