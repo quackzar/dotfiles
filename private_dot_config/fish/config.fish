@@ -2,7 +2,7 @@
 set -gx PATH "$HOME/.cargo/bin" $PATH
 set -gx PATH "$HOME/.dotnet/tools" $PATH
 
-set -gx GOPATH "$HOME/go"
+set -gx GOPATH "$HOME/.go"
 set -gx GOBIN "$GOPATH/bin"
 set -gx PATH "$GOBIN" $PATH
 
@@ -43,6 +43,11 @@ if type -q 'exa'
     alias ls 'exa'
     set -U FZF_PREVIEW_DIR_CMD "exa"
 end
+
+if type -q 'erdtree'
+    alias tree "erdtree"
+end
+
 if type -q 'colormake'
     alias make 'colormake'
 end
@@ -79,6 +84,9 @@ switch (uname)
         set -g ANDROID_SDK_ROOT ~/Library/Android/sdk
         set -g PATH $ANDROID_HOME/tools $PATH
         set -g PATH $ANDROID_HOME/platform-tools $PATH
+        set -g PATH $HOME/.wasmedge/bin $PATH
+
+        # set -x SSH_AUTH_SOCK /Users/mikkel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
     case Linux
         alias pbcopy 'xclip -selection clipboard'
@@ -100,6 +108,7 @@ if test $TERM = 'xterm-kitty'
     # alias pbpaste 'kitty +kitten clipboard --get-clipboard'
 end
 
+set -gx NEOVIDE_MULTIGRID
 
 set -gx RIPGREP_CONFIG_PATH "$XDG_CONFIG_HOME/ripgrep/ripgreprc"
 
@@ -130,7 +139,7 @@ if type -q kubecolor && type -q kubectl
         kubecolor $argv
     end
 end
-
+ 
 set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
 set -gx HOMEBREW_CASK_OPTS --require-sha
 
