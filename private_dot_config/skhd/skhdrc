@@ -14,7 +14,8 @@ yabai < escape; default
 # ==============================
 #
 
-alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+# alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
+alt + shift - return : ~/.config/skhd/kitty.sh
 
 # reload files
 alt - escape : skhd --reload
@@ -29,12 +30,12 @@ alt + cmd - r : brew services restart yabai
 
 
 # change gaps and padding
-alt + shift - y : yabai -m space --gap abs:0; yabai -m space --padding abs:0:0:0:0
-alt + shift - u : yabai -m space --gap abs:5; yabai -m space --padding abs:5:5:5:5
-alt + shift - i : yabai -m space --gap abs:10; yabai -m space --padding abs:10:10:10:10
-alt + shift - o : yabai -m space --gap abs:20; yabai -m space --padding abs:20:20:20:20
+lalt + shift - y : yabai -m space --gap abs:0; yabai -m space --padding abs:0:0:0:0
+lalt + shift - u : yabai -m space --gap abs:5; yabai -m space --padding abs:5:5:5:5
+lalt + shift - i : yabai -m space --gap abs:10; yabai -m space --padding abs:10:10:10:10
+lalt + shift - o : yabai -m space --gap abs:20; yabai -m space --padding abs:20:20:20:20
 
-alt - m : yabai -m space --toggle padding; yabai -m space --toggle gap
+lalt - m : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # left right brackets, dynamic gaps
 # alt + shift - kVK_0x21 : ???
@@ -50,6 +51,10 @@ cmd + shift - f : yabai -m window --toggle native-fullscreen
 alt - t : yabai -m window --toggle float;\
           yabai -m window --grid 4:4:1:1:2:2
 
+cmd + alt - s : yabai -m window --toggle sticky ; \
+                 yabai -m window --toggle topmost ;
+
+
 # toggle window border
 # shift + alt - b : yabai -m window --toggle border
 
@@ -63,8 +68,8 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
-cmd - 0x21 : yabai -m display --focus prev
-cmd - 0x1E : yabai -m display --focus next
+alt + cmd - 0x21 : yabai -m display --focus next
+alt + cmd - 0x1E : yabai -m display --focus prev
 
 # swap
 alt + shift - h : yabai -m window --swap west
