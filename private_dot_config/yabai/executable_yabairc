@@ -45,6 +45,7 @@ yabai -m config mouse_drop_action            swap
 
 # Rules
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
 yabai -m rule --add app="^Finder$" title="Info$" manage=off
@@ -58,8 +59,11 @@ yabai -m rule --add app="^Installer$" manage=off
 yabai -m rule --add app="^Battle.net$" manage=off
 yabai -m rule --add app="^Digital Colou?r Meter$" sticky=on
 yabai -m rule --add app="LuLu" manage=off
+yabai -m rule --add app="Calculator" manage=off
+yabai -m rule --add app="^Calendar$" title="^$" manage=off
 yabai -m rule --add title="Keeper Desktop Applet" manage=off
+yabai -m rule --add title="Microsoft Teams Notification" manage=off
 
-setleds ^caps > /dev/null
+# setleds ^caps > /dev/null
 
 echo "yabai configuration loaded.."
