@@ -44,10 +44,6 @@ if type -q 'exa'
     set -U FZF_PREVIEW_DIR_CMD "exa"
 end
 
-if type -q 'erdtree'
-    alias tree "erdtree"
-end
-
 if type -q 'colormake'
     alias make 'colormake'
 end
@@ -68,20 +64,36 @@ end
 switch (uname)
     case Darwin
         set SDKROOT (xcrun --sdk macosx --show-sdk-path)
-        # set -gx PATH '/opt/homebrew/opt/llvm/bin/' $PATH
-        # Toggle the macOS menubar from on to auto.
-        alias menubar '~/Scripts/toggle_menubar.scpt'
-        alias file-clipbaord '~/Scripts/file-clipboard.scpt'
         # set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
 
         # set -gx LDFLAGS "-L/usr/local/opt/python@3.10/lib"
         # set -gx PKG_CONFIG_PATH "/usr/local/opt/python@3.10/lib/pkgconfig"
 
-        # set -g PATH '/opt/homebrew/opt/llvm/bin' $PATH
-        set -g C_INCLUDE_PATH "/opt/homebrew/include" $C_INCLUDE_PATH
-        set -g CPLUS_INCLUDE_PATH "/opt/homebrew/include" $CPLUS_INCLUDE_PATH
+        set -g PATH (brew --prefix)'/bin' $PATH
+        set -g PATH (brew --prefix)'/sbin' $PATH
+        set -g PATH (brew --prefix)'/opt/llvm/bin' $PATH
+
+        set -g SDKPATH (xcrun --show-sdk-path)
+
+        set -g DYLD_LIBRARY_PATH "/usr/local/include" $DYLD_LIBRARY_PATH
+        set -g DYLD_LIBRARY_PATH (brew --prefix)"/include" $DYLD_LIBRARY_PATH
+
+        set -g LIBRARY_PATH "/usr/local/lib" $LIBRARY_PATH
+        set -g LIBRARY_PATH (brew --prefix)"/lib" $LIBRARY_PATH
+
+        set -g CPATH "/usr/local/include" $CPATH
+        set -g CPATH (brew --prefix)"/include" $CPATH
+
+        set -g C_INCLUDE_PATH (brew --prefix)"/include" $C_INCLUDE_PATH
+        set -g C_INCLUDE_PATH "/usr/local/include" $C_INCLUDE_PATH
+
+        set -g CPLUS_INCLUDE_PATH (brew --prefix)/"include" $CPLUS_INCLUDE_PATH
+        set -g CPLUS_INCLUDE_PATH "/usr/local/include" $CPLUS_INCLUDE_PATH
+
         set -g ANDROID_HOME ~/Library/Android/sdk
         set -g ANDROID_SDK_ROOT ~/Library/Android/sdk
+        set -g PATH "/Library/Java/JavaVirtualMachines/graalvm-ce-java17-22.3.0/Contents/Home/bin" $PATH
+        set -g JAVA_HOME "/Library/Java/JavaVirtualMachines/graalvm-ce-java17-22.3.0/Contents/Home"
         set -g PATH $ANDROID_HOME/tools $PATH
         set -g PATH $ANDROID_HOME/platform-tools $PATH
         set -g PATH $HOME/.wasmedge/bin $PATH
@@ -126,6 +138,10 @@ if type -q zoxide
     zoxide init fish | source
 end
 
+if type -q 'wezterm'
+    wezterm shell-completion --shell=fish | source
+end
+
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
 # if type -q starship
@@ -142,5 +158,11 @@ end
  
 set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
 set -gx HOMEBREW_CASK_OPTS --require-sha
+
+# Secrets
+set SECRETS_FILE "$XDG_CONFIG_HOME/fish/secrets.fish"
+if test -e $SECRETS_FILE
+    source $SECRETS_FILE
+end
 
 source "$HOME/.config/fish/monokai.fish"
