@@ -1,0 +1,29 @@
+theme = "kanagawa"
+
+[editor]
+mouse = true
+color-modes	= true
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type"]
+separator = "│"
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+
+
+[editor.indent-guides]
+render = true
+character = "▏"
+skip-levels = 1
+
+
