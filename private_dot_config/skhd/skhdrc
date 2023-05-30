@@ -15,7 +15,8 @@ yabai < escape; default
 #
 
 # alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
-alt + shift - return : ~/.config/skhd/kitty.sh
+# alt + shift - return : ~/.config/skhd/kitty.sh
+alt + shift - return : open -a 'wezterm'; wezterm cli spawn --new-window
 
 # reload files
 alt - escape : skhd --reload
@@ -25,15 +26,16 @@ alt - escape : skhd --reload
 # ===============================
 #
 
-alt + cmd - q : brew services stop yabai
-alt + cmd - r : brew services restart yabai
+alt + cmd - q : yabai --stop-service
+alt + cmd - r : yabai --restart-service
 
 
 # change gaps and padding
 lalt + shift - y : yabai -m space --gap abs:0; yabai -m space --padding abs:0:0:0:0
-lalt + shift - u : yabai -m space --gap abs:5; yabai -m space --padding abs:5:5:5:5
-lalt + shift - i : yabai -m space --gap abs:10; yabai -m space --padding abs:10:10:10:10
-lalt + shift - o : yabai -m space --gap abs:20; yabai -m space --padding abs:20:20:20:20
+lalt + shift - u : yabai -m space --gap abs:20; yabai -m space --padding abs:20:20:20:20
+lalt + shift - i : yabai -m space --gap abs:50; yabai -m space --padding abs:50:50:50:50
+lalt + shift - o : yabai -m space --gap abs:100; yabai -m space --padding abs:100:100:100:100
+lalt + shift - o : yabai -m space --gap abs:200; yabai -m space --padding abs:200:200:200:200
 
 lalt - m : yabai -m space --toggle padding; yabai -m space --toggle gap
 
@@ -183,6 +185,17 @@ alt + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
 alt + cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
 alt + cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
 alt + cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
+
+yabai < cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
+yabai < cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
+yabai < cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
+yabai < cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
+yabai < cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
+yabai < cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
+yabai < cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
+yabai < cmd - 8 : yabai -m window --space  8; yabai -m space --focus 8
+yabai < cmd - 9 : yabai -m window --space  9; yabai -m space --focus 9
+yabai < cmd - 0 : yabai -m window --space 10; yabai -m space --focus 10
 
 # focus monitor
 shift + alt - x  : yabai -m display --focus recent
