@@ -8,7 +8,7 @@
 # --no-ignore
 
 # Exclude directories.
---glob=!{.git,.svn,.tldr,.cache,cache,node_modules,.Trash,vendor,.DS_Store,.bloop}
+--glob=!{.git,.svn,.tldr,.cache,cache,node_modules,.Trash,vendor,.DS_Store,.bloop,target}
 
 # Exclude this mega folder
 --glob=!{Library}
