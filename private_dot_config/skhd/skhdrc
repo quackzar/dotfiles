@@ -16,7 +16,7 @@ yabai < escape; default
 
 # alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 # alt + shift - return : ~/.config/skhd/kitty.sh
-alt + shift - return : open -a 'wezterm'; wezterm cli spawn --new-window
+alt + shift - return : wezterm cli spawn --new-window || open -a 'wezterm'
 
 # reload files
 alt - escape : skhd --reload
