@@ -52,7 +52,7 @@ yabai -m rule --add app="^Finder$" title="Info$" manage=off
 yabai -m rule --add app="^Finder$" title="Copy$" manage=off
 yabai -m rule --add app="^Finder$" title="^Connect to Server$" manage=off
 yabai -m rule --add app="^Finder$" title="^Connecting to Server$" manage=off
-yabai -m rule --add title="Preferences$" manage=off
+yabai -m rule --add title="^Preferences$" manage=off
 yabai -m rule --add app="^NetAuthAgent$" manage=off
 yabai -m rule --add app="^Keka$" manage=off
 yabai -m rule --add app="^Installer$" manage=off
@@ -62,7 +62,7 @@ yabai -m rule --add app="LuLu" manage=off
 yabai -m rule --add app="Calculator" manage=off
 yabai -m rule --add app="^PrinterProxy$" manage=off
 yabai -m rule --add app="^Calendar$" title="^$" manage=off
-yabai -m rule --add title="Keeper Desktop Applet" manage=off
+yabai -m rule --add title="^Keeper Desktop Applet" manage=off
 yabai -m rule --add title="Microsoft Teams Notification" manage=off
 yabai -m rule --add title="Microsoft Teams Notification" manage=off
 # yabai -m rule --add title="\| Microsoft Teams" can_size=false manage=off
