@@ -26,6 +26,7 @@ return {
     color_scheme = "Kanagawa (Gogh)",
     enable_csi_u_key_encoding = true,
 
+
     inactive_pane_hsb = {
         saturation = 0.9,
         brightness = 0.8,
