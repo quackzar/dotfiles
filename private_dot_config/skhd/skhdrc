@@ -5,7 +5,7 @@
 # Yabai Mode, for easier controlling yabai and window management
 # Enter with <M-x> in default mode
 # Exit with <esc> and return to default mode
-:: yabai : yabai -m config window_border on; setleds +caps /dev/null
+:: yabai : yabai -m config window_border on; setleds +caps > /dev/null
 alt - y ; yabai
 yabai < escape; default
 
