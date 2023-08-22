@@ -28,6 +28,7 @@ alt - escape : skhd --reload
 
 alt + cmd - q : yabai --stop-service
 alt + cmd - r : yabai --restart-service
+shift + alt + cmd - q : killall yabai
 
 
 # change gaps and padding
@@ -136,16 +137,16 @@ yabai < ctrl - l : yabai -m window --resize right:20:0; \
                   yabai -m window --resize left:20:0
 
 # balance size of windows
-yabai < shift + alt - 0 : yabai -m space --balance
+yabai < shift - 0 : yabai -m space --balance
 
 # make floating window fill screen
-yabai < shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+yabai < shift - up     : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-yabai < shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+yabai < shift - left   : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-yabai < shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+yabai < shift - right  : yabai -m window --grid 1:2:1:0:1:1
 
 
 # create desktop and follow focus - uses jq for parsing json (brew install jq)
