@@ -61,6 +61,7 @@ if type -q 'yabai'
 end
 
 
+
 switch (uname)
     case Darwin
         set SDKROOT (xcrun --sdk macosx --show-sdk-path)
@@ -134,13 +135,19 @@ bind \cy accept-autosuggestion
 bind \cj forward-bigword
 bind \e\[106\;5u forward-bigword
 
-if type -q zoxide
-    zoxide init fish | source
+
+if status --is-interactive
+    if type -q 'zoxide'
+        zoxide init fish | source
+    end
+    if type -q 'atuin'
+        atuin init fish | source
+    end
+    if type -q 'wezterm'
+        wezterm shell-completion --shell=fish | source
+    end
 end
 
-if type -q 'wezterm'
-    wezterm shell-completion --shell=fish | source
-end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
