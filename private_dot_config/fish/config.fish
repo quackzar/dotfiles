@@ -39,9 +39,9 @@ if type -q 'bat'
     set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
 end
 
-if type -q 'exa'
-    alias ls 'exa'
-    set -U FZF_PREVIEW_DIR_CMD "exa"
+if type -q 'eza'
+    alias ls 'eza'
+    set -U FZF_PREVIEW_DIR_CMD "eza"
 end
 
 if type -q 'colormake'
