@@ -8,8 +8,6 @@
     rebase = true
 [submodule]
     recurse = true
-[diff]
-    colorMoved = default
 [color]
     diff = auto
     status = auto
@@ -20,26 +18,14 @@
 [delta]
     plus-color = "#012800"
     minus-color = "#340001"
-    syntax-theme = Monokai Extended
+    syntax-theme = DarkNeon
 [interactive]
     diffFilter = delta --color-only
-[merge]
-    tool = diffconflicts
-[mergetool]
-    prompt = true
-    path = nvim
-    keepBackup = false
-[mergetool "nvim"]
-    cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [difftool]
     prompt = false
 [difftool.latex]
     cmd = latexdiff "$LOCAL" "$REMOTE"
-[mergetool "diffconflicts"]
-    cmd = nvim -c DiffConflicts \"$MERGED\" \"$BASE\" \"$LOCAL\" \"$REMOTE\"
-    trustExitCode = true
 [alias]
-    ci = commit
     lg = log --oneline --reverse
     lg1 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
     lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
@@ -48,15 +34,30 @@
     stat = !git diff --stat $(git merge-base HEAD \"$REVIEW_BASE\")
     rename-tag = "!sh -c 'set -e;git tag $2 $1; git tag -d $1;git push origin :refs/tags/$1;git push --tags' -"
     adog = log --all --decorate --oneline --graph
+    rank = "shortlog -s -n --no-merges"
     r = !/usr/local/bin/git-rbs
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
+    hide = update-index --assume-unchanged
+    unhide = update-index --no-assume-unchanged
 [tag]
     sort = authordate
 [advice]
     detachedHead = false
 [push]
     autoSetupRemote = true
+[user]
+    name = Mikkel Wienberg Madsen
+    email = mikkel.wienberg@alexandra.dk
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgvuWXKO88ZPcnV9Z3BCnwnLNdPi/APmmiubjl44pj9 mikkel.wienberg@alexandra.dk
+[gpg]
+    format = ssh
+[commit]
+    gpgsign = true
+[safe]
+    directory = /Users/mikkel/.config/nvim
+[init]
+    defaultBranch = master
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
