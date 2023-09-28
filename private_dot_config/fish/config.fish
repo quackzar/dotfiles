@@ -40,7 +40,7 @@ if type -q 'bat'
 end
 
 if type -q 'eza'
-    alias ls 'eza'
+    alias ls 'eza --git --git-repos-no-status'
     set -U FZF_PREVIEW_DIR_CMD "eza"
 end
 
