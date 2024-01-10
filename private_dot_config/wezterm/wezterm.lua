@@ -30,12 +30,14 @@ return {
     hide_tab_bar_if_only_one_tab = true,
     -- window_decorations = "RESIZE",
     default_prog = {'/opt/homebrew/bin/fish', '-l'},
-    font_size = 13,
+    font_size = 14,
     font = wezterm.font_with_fallback({
         -- "FiraCode Nerd Font",
-        "JetBrainsMono Nerd Font",
+        {family="Monaspace Neon", harfbuzz_features = { 'ss02=1', 'ss07=1', 'ss04=1', 'ss03=1', 'ss06=1'}},
+        -- {family="Intel One Mono"},
+        -- {family="JetBrainsMono Nerd Font"},
         -- "JetBrains Mono",
-        -- "DejaVuSansM Nerd Font",
+        "DejaVuSansM Nerd Font",
         -- "VictorMono Nerd Font Mono",
 
         -- Nonicons, special cool symbols
@@ -45,7 +47,7 @@ return {
         -- Terminal Blocks
         {family = "LegacyComputing", scale=1.1},
     }),
-    harfbuzz_features = { 'calt=0', 'clig=0', 'liga=0' },
+    harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'dist=1' },
     default_cursor_style = 'SteadyBar',
     color_scheme = "Kanagawa (Gogh)",
     enable_csi_u_key_encoding = true,
