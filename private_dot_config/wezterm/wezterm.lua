@@ -24,6 +24,7 @@ wezterm.on('user-var-changed', function(window, pane, name, value)
 end)
 
 return {
+    max_fps = 120,
     term = 'wezterm',
     custom_block_glyphs = true,
     tab_bar_at_bottom = true,
