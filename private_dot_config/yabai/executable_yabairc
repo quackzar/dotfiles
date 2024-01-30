@@ -48,6 +48,7 @@ yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^System Settings$" manage=off
 yabai -m rule --add app="^System Information$" manage=off
 yabai -m rule --add app="^Archive Utility$" manage=off
+yabai -m rule --add app="^Calender$" manage=off
 yabai -m rule --add app="^Finder$" title="Info$" manage=off
 yabai -m rule --add app="^Finder$" title="Copy$" manage=off
 yabai -m rule --add app="^Finder$" title="^Connect to Server$" manage=off
@@ -64,10 +65,10 @@ yabai -m rule --add app="^PrinterProxy$" manage=off
 yabai -m rule --add app="^Calendar$" title="^$" manage=off
 yabai -m rule --add title="^Keeper Desktop Applet" manage=off
 yabai -m rule --add title="Microsoft Teams Notification" manage=off
-yabai -m rule --add title="Microsoft Teams Notification" manage=off
-# yabai -m rule --add title="\| Microsoft Teams" can_size=false manage=off
+yabai -m rule --add title="Microsoft Teams" manage=off
 
 yabai -m signal --add event=window_created action='yabai -m query --windows --window $YABAI_WINDOW_ID | jq -er ".\"can-resize\" or .\"is-floating\"" || yabai -m window $YABAI_WINDOW_ID --toggle float'
+
 
 # setleds ^caps > /dev/null
 
