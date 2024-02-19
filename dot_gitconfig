@@ -15,6 +15,10 @@
     interactive = auto
     pager = true
     ui = true
+[merge]
+    conflictstyle =  zdiff3
+[diff]
+    algorithm = histogram
 [delta]
     plus-color = "#012800"
     minus-color = "#340001"
@@ -61,3 +65,9 @@
     smudge = git-lfs smudge -- %f
     process = git-lfs filter-process
     required = true
+[rebase]
+	updateRefs = true
+[rerere]
+    enabled = true
+[notes]
+    displayRef = 'refs/notes/*'
