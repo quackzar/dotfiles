@@ -23,6 +23,23 @@ wezterm.on('user-var-changed', function(window, pane, name, value)
     window:set_config_overrides(overrides)
 end)
 
+function get_appearance()
+  if wezterm.gui then
+    return wezterm.gui.get_appearance()
+  end
+  return 'Dark'
+end
+
+-- 'Mono Amber (Gogh)' is neat.
+
+function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'Kanagawa (Gogh)'
+  else
+    return 'Selenized Light (Gogh)'
+  end
+end
+
 return {
     max_fps = 120,
     term = 'wezterm',
@@ -50,7 +67,7 @@ return {
     }),
     harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'dist=1' },
     default_cursor_style = 'SteadyBar',
-    color_scheme = "Kanagawa (Gogh)",
+    color_scheme = scheme_for_appearance(get_appearance()),
     enable_csi_u_key_encoding = true,
 
 
