@@ -23,8 +23,13 @@ set -gx LC_ALL "en_US.UTF-8"
 set -gx LANG "en_US.UTF-8"
 
 
-alias python 'python3'
-alias pip 'pip3'
+# alias python 'python3'
+# alias pip 'pip3'
+
+if type -q 'pyenv'
+    set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
+    pyenv init - | source
+end
 
 if type -q 'nvim'
     set -gx EDITOR "nvim"
@@ -40,7 +45,8 @@ if type -q 'bat'
 end
 
 if type -q 'eza'
-    alias ls 'eza --git --git-repos-no-status'
+    alias ls 'eza --git'
+    alias ll 'eza --git --long'
     set -U FZF_PREVIEW_DIR_CMD "eza"
 end
 
@@ -60,15 +66,18 @@ if type -q 'yabai'
     alias border 'yabai -m config window_border'
 end
 
+if type -q 'direnv'
+    direnv hook fish | source
+    set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)
+    set -g direnv_fish_mode eval_after_arrow # trigger direnv at prompt, and only after arrow-based directory changes before executing command
+    set -g direnv_fish_mode disable_arrow    # trigger direnv at prompt only, this is similar functionality to the original behavior
+end
+
 
 
 switch (uname)
     case Darwin
         set SDKROOT (xcrun --sdk macosx --show-sdk-path)
-        # set -gx PYTHONPATH "/usr/local/lib/python3.9/site-packages" $PYTHONPATH
-
-        # set -gx LDFLAGS "-L/usr/local/opt/python@3.10/lib"
-        # set -gx PKG_CONFIG_PATH "/usr/local/opt/python@3.10/lib/pkgconfig"
 
         set -g PATH (brew --prefix)'/bin' $PATH
         set -g PATH (brew --prefix)'/sbin' $PATH
@@ -172,4 +181,4 @@ if test -e $SECRETS_FILE
     source $SECRETS_FILE
 end
 
-source "$HOME/.config/fish/monokai.fish"
+source "$HOME/.config/fish/themes/kanagawa.fish"
