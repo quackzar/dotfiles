@@ -47,7 +47,7 @@
 [advice]
     detachedHead = false
 [push]
-    autoSetupRemote = true
+	autosetupremote = true
 [user]
     name = Mikkel Wienberg Madsen
     email = mikkel.wienberg@alexandra.dk
