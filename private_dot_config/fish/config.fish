@@ -25,6 +25,10 @@ set -gx LANG "en_US.UTF-8"
 
 # alias python 'python3'
 # alias pip 'pip3'
+#
+set -gx PNPM_HOME "/Users/mikkel/Library/pnpm"
+set -gx PATH $PNPM_HOME $PATH
+
 
 if type -q 'pyenv'
     set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
@@ -182,3 +186,6 @@ if test -e $SECRETS_FILE
 end
 
 source "$HOME/.config/fish/themes/kanagawa.fish"
+
+# opam configuration
+source /Users/mikkel/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
