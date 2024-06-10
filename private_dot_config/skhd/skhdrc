@@ -28,7 +28,7 @@ alt - escape : skhd --reload
 
 alt + cmd - q : yabai --stop-service
 alt + cmd - r : yabai --restart-service
-shift + alt + cmd - q : killall yabai
+shift + alt - q : killall yabai
 
 
 # change gaps and padding
@@ -45,6 +45,8 @@ lalt - m : yabai -m space --toggle padding; yabai -m space --toggle gap
 # alt + shift - kVK_0x1E : ???
 
 # States
+#
+
 
 cmd + alt - f : yabai -m window --toggle zoom-fullscreen
 # toggle window native fullscreen
@@ -239,7 +241,7 @@ yabai < x : yabai -m space --mirror x-axis
 yabai < alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window split type
-alt - e : yabai -m window --toggle split
+yabai < alt - e : yabai -m window --toggle split
 
 # Swap window under mouse
 yabai < space : yabai -m window --swap mouse
