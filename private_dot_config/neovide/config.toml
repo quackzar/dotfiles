@@ -1,0 +1,7 @@
+[font]
+normal = ["Monaspace Neon"]
+size = 14
+
+[font.features]
+Monaspace = [ 'ss02=1', 'ss07=1', 'ss04=1', 'ss03=1', 'ss06=1' ]
+
