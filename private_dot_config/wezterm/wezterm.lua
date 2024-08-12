@@ -1,23 +1,18 @@
 local wezterm = require 'wezterm';
+local appearance = require 'appearance'
 
 -- Cool tricks. https://alexplescan.com/posts/2024/08/10/wezterm/
 
-function get_appearance()
-  if wezterm.gui then
-    return wezterm.gui.get_appearance()
-  end
-  return 'Dark'
-end
-
 -- 'Mono Amber (Gogh)' is neat.
 
-function scheme_for_appearance(appearance)
-  if appearance:find 'Dark' then
+local function colorscheme()
+  if appearance.is_dark() then
     return 'Kanagawa (Gogh)'
   else
     return 'Selenized Light (Gogh)'
   end
 end
+
 
 wezterm.on('update-status', function(window)
   -- Grab the utf8 character for the "powerline" left facing
@@ -86,7 +81,7 @@ return {
     }),
     harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'dist=1' },
     default_cursor_style = 'SteadyBar',
-    color_scheme = scheme_for_appearance(get_appearance()),
+    color_scheme = colorscheme(),
     enable_csi_u_key_encoding = true,
 
 
