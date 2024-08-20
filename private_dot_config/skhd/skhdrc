@@ -17,6 +17,7 @@ yabai < escape; default
 # alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --single-instance -d ~
 # alt + shift - return : ~/.config/skhd/kitty.sh
 alt + shift - return : wezterm cli spawn --new-window || open -a 'wezterm'
+yabai < shift - 0x2C : wezterm cli spawn --new-window fish -c 'nvim ~/.config/skhd/skhdrc' || open -a 'wezterm'
 
 # reload files
 alt - escape : skhd --reload
@@ -73,8 +74,16 @@ alt - j : yabai -m window --focus south
 alt - k : yabai -m window --focus north
 alt - l : yabai -m window --focus east
 
+# focus between displays
+cmd - left  : yabai -m window --focos west  || $(yabai -m display --focus west)
+cmd - down  : yabai -m window --focus south || $(yabai -m display --focus south)
+cmd - up    : yabai -m window --fcous north || $(yabai -m display --focus north)
+cmd - right : yabai -m window --focus east  || $(yabai -m display --focus east)
+
 alt + cmd - 0x21 : yabai -m display --focus next
 alt + cmd - 0x1E : yabai -m display --focus prev
+yabai < 0x21 : yabai -m display --focus next
+yabai < 0x1E : yabai -m display --focus prev
 
 # swap
 alt + shift - h : yabai -m window --swap west
@@ -82,8 +91,19 @@ alt + shift - j : yabai -m window --swap south
 alt + shift - k : yabai -m window --swap north
 alt + shift - l : yabai -m window --swap east
 
+# move windows between displays
+alt + shift - left  : yabai -m window --swap west  || $(yabai -m window --display west; yabai -m display --focus west)
+alt + shift - down  : yabai -m window --swap south || $(yabai -m window --display south; yabai -m display --focus south)
+alt + shift - up    : yabai -m window --swap north || $(yabai -m window --display north; yabai -m display --focus north)
+alt + shift - right : yabai -m window --swap east  || $(yabai -m window --display east; yabai -m display --focus east)
+
+# focus between displays
 alt - 0x21 :  yabai -m space --focus prev
 alt - 0x1E :  yabai -m space --focus next
+
+# move window to display
+yabai < cmd - 0x21 : yabai -m window --display next; yabai -m display --focus next
+yabai < cmd - 0x1E : yabai -m window --display prev; yabao -m display --focus prev
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
 shift + cmd - n : yabai -m space --create && \
@@ -207,6 +227,7 @@ shift + alt - c  : yabai -m display --focus next
 yabai < shift - 1  : yabai -m display --focus 1
 yabai < shift - 2  : yabai -m display --focus 2
 yabai < shift - 3  : yabai -m display --focus 3
+
 
 # increase window size
 yabai < shift - a : yabai -m window --resize left:-20:0
