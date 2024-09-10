@@ -65,7 +65,11 @@ return {
     font_size = 14,
     font = wezterm.font_with_fallback({
         -- "FiraCode Nerd Font",
-        { family = "Monaspace Neon",  harfbuzz_features = { 'ss02=1', 'ss07=1', 'ss04=1', 'ss03=1', 'ss06=1' } },
+        { -- Normal text
+            family='Monaspace Neon',
+            harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+            stretch='UltraCondensed', -- This doesn't seem to do anything
+        },
         -- {family="Intel One Mono"},
         -- {family="JetBrainsMono Nerd Font"},
         -- "JetBrains Mono",
@@ -83,7 +87,6 @@ return {
     default_cursor_style = 'SteadyBar',
     color_scheme = colorscheme(),
     enable_csi_u_key_encoding = true,
-
 
     inactive_pane_hsb = {
         saturation = 0.9,
