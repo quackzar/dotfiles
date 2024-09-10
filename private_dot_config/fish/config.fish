@@ -185,6 +185,12 @@ if test -e $SECRETS_FILE
     source $SECRETS_FILE
 end
 
+# Non-global config
+set SECRETS_FILE "$XDG_CONFIG_HOME/fish/local.fish"
+if test -e $LOCAL_FISH_CFG
+    source $LOCAL_FISH_CFG
+end
+
 source "$HOME/.config/fish/themes/kanagawa.fish"
 
 # opam configuration
