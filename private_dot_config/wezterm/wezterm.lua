@@ -67,7 +67,7 @@ return {
         -- "FiraCode Nerd Font",
         { -- Normal text
             family='Monaspace Neon',
-            harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+            harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
             stretch='UltraCondensed', -- This doesn't seem to do anything
         },
         -- {family="Intel One Mono"},
@@ -84,6 +84,38 @@ return {
         { family = "LegacyComputing", scale = 1.1 },
     }),
     harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'dist=1' },
+    font_rules = {
+        { -- Italic
+            intensity = 'Normal',
+            italic = true,
+            font = wezterm.font({
+                family="Monaspace Radon",  -- script style
+                style = 'Normal',
+            })
+        },
+
+        { -- Bold
+            intensity = 'Bold',
+            italic = false,
+            font = wezterm.font( {
+                family='Monaspace Argon',
+                -- weight='ExtraBold',
+                weight='Bold',
+            })
+        },
+
+        { -- Bold Italic
+            intensity = 'Bold',
+            italic = true,
+            font = wezterm.font( {
+                family='Monaspace Radon',
+                style='Normal',
+                weight='Bold',
+            }
+            )
+        },
+    },
+
     default_cursor_style = 'SteadyBar',
     color_scheme = colorscheme(),
     enable_csi_u_key_encoding = true,
