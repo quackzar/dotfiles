@@ -68,7 +68,6 @@ return {
         { -- Normal text
             family='Monaspace Neon',
             harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
-            stretch='UltraCondensed', -- This doesn't seem to do anything
         },
         -- {family="Intel One Mono"},
         -- {family="JetBrainsMono Nerd Font"},
@@ -119,6 +118,8 @@ return {
     default_cursor_style = 'SteadyBar',
     color_scheme = colorscheme(),
     enable_csi_u_key_encoding = true,
+	send_composed_key_when_left_alt_is_pressed = true,
+	send_composed_key_when_right_alt_is_pressed = true,
 
     inactive_pane_hsb = {
         saturation = 0.9,
