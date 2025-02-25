@@ -4,10 +4,30 @@
     autocrlf = input
     editor = nvim
     pager = delta --pager='less -F'
+[init]
+    defaultBranch = master
+[column]
+    ui = auto
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true
 [pull]
     rebase = true
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 [submodule]
     recurse = true
+[tag]
+    sort = version:refname
+[advice]
+    detachedHead = false
+[rebase]
+    updateRefs = true
+    autoSquash = true
+    autoStash = true
 [color]
     diff = auto
     status = auto
@@ -19,6 +39,9 @@
     conflictstyle =  zdiff3
 [diff]
     algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [delta]
     plus-color = "#012800"
     minus-color = "#340001"
@@ -42,32 +65,27 @@
     r = !/usr/local/bin/git-rbs
     hide = update-index --assume-unchanged
     unhide = update-index --no-assume-unchanged
-[tag]
-    sort = authordate
-[advice]
-    detachedHead = false
-[push]
-	autosetupremote = true
+[safe]
+    directory = /Users/mikkel/.config/nvim
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[rerere]
+    enabled = true
+[notes]
+    displayRef = 'refs/notes/*'
+
+
+[help]
+    autocorrect = prompt
+[commit]
+    gpgsign = true
+    verbose = true
 [user]
     name = Mikkel Wienberg Madsen
     email = mikkel.wienberg@alexandra.dk
     signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgvuWXKO88ZPcnV9Z3BCnwnLNdPi/APmmiubjl44pj9 mikkel.wienberg@alexandra.dk
 [gpg]
     format = ssh
-[commit]
-    gpgsign = true
-[safe]
-    directory = /Users/mikkel/.config/nvim
-[init]
-    defaultBranch = master
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
-[rebase]
-	updateRefs = true
-[rerere]
-    enabled = true
-[notes]
-    displayRef = 'refs/notes/*'
