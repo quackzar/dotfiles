@@ -54,6 +54,14 @@ local function resize_pane(key, direction)
 end
 
 
+local function unmap_key(mods, key)
+    return {
+        key = key,
+        mods = mods,
+        action = wezterm.action.DisableDefaultAssignment
+    }
+end
+
 return {
     max_fps = 120,
     term = 'wezterm',
@@ -82,7 +90,7 @@ return {
         -- Terminal Blocks
         { family = "LegacyComputing", scale = 1.1 },
     }),
-    harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'dist=1' },
+    -- harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'dist=1' },
     font_rules = {
         { -- Italic
             intensity = 'Normal',
@@ -90,6 +98,7 @@ return {
             font = wezterm.font({
                 family="Monaspace Radon",  -- script style
                 style = 'Normal',
+                harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
             })
         },
 
@@ -100,6 +109,7 @@ return {
                 family='Monaspace Argon',
                 -- weight='ExtraBold',
                 weight='Bold',
+                harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
             })
         },
 
@@ -110,6 +120,7 @@ return {
                 family='Monaspace Radon',
                 style='Normal',
                 weight='Bold',
+                harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
             }
             )
         },
@@ -118,8 +129,8 @@ return {
     default_cursor_style = 'SteadyBar',
     color_scheme = colorscheme(),
     enable_csi_u_key_encoding = true,
-	send_composed_key_when_left_alt_is_pressed = true,
-	send_composed_key_when_right_alt_is_pressed = true,
+    send_composed_key_when_left_alt_is_pressed = true,
+    send_composed_key_when_right_alt_is_pressed = true,
 
     inactive_pane_hsb = {
         saturation = 0.9,
@@ -171,6 +182,15 @@ return {
         move_pane('k', 'Up'),
         move_pane('h', 'Left'),
         move_pane('l', 'Right'),
+        unmap_key("CTRL|SHIFT", "x"),
+        unmap_key("CTRL|SHIFT", "j"),
+        unmap_key("CTRL|SHIFT", "k"),
+        unmap_key("CTRL|SHIFT", "h"),
+        unmap_key("CTRL|SHIFT", "l"),
+        unmap_key("CTRL|SHIFT", "t"),
+        unmap_key("CTRL|SHIFT", "q"),
+        unmap_key("CTRL|SHIFT", "n"),
+        unmap_key("CTRL|SHIFT", "s"),
     },
     key_tables = {
         resize_panes = {
