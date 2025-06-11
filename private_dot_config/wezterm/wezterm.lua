@@ -61,6 +61,27 @@ local function unmap_key(mods, key)
         action = wezterm.action.DisableDefaultAssignment
     }
 end
+local monaspace_font_features = {
+    'calt',  -- (contextual alternates) texture healing
+    'liga',  --  activates customized spacing of repeating characters, like /// or ||
+    'dlig',
+    'dist',
+    -- 'ss01',  -- ligatures related to the equals glyph like != and ===
+    'ss02',  -- ligatures for greater/less or equal (<=, >=)
+    'ss03',  -- ligatures related to arrows like -> and ~>.
+    'ss04',  -- ligatures related to markup, like </ and />
+    -- 'ss05',  -- ligatures related to the F# programming language, like |>
+    'ss06',  -- ligatures related to repeated uses of #, +, and &. (###, +++, &&&)
+    'ss07',  -- ligatures related to colons like :: or =:=.
+    'ss08',  -- ligatures related to combinations of periods with other glyphs like ..= or .-.
+    'ss09',  -- ligatures related to combinations of the greater/less than and equals signs, like <=>,>>, and =<<
+    'ss10',  -- other tags, like #[ and #(
+    -- 'cv31',  -- 6-pointed *
+    'cv32',  -- ≥ ≤ angled lower line
+    -- 'cv61',  -- enables the optional closed square ligature for []
+    'cv62',  -- @_ ligature
+}
+
 
 return {
     max_fps = 120,
@@ -72,17 +93,16 @@ return {
     default_prog = { '/opt/homebrew/bin/fish', '-l' },
     font_size = 14,
     font = wezterm.font_with_fallback({
-        -- "FiraCode Nerd Font",
         { -- Normal text
-            family='Monaspace Neon',
-            harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+            family='Monaspace Neon', -- font version: 
+            harfbuzz_features=monaspace_font_features,
         },
         -- {family="Intel One Mono"},
         -- {family="JetBrainsMono Nerd Font"},
+        -- "FiraCode Nerd Font",
         -- "JetBrains Mono",
-        "DejaVuSansM Nerd Font",
+        -- "DejaVuSansM Nerd Font",
         -- "VictorMono Nerd Font Mono",
-
         -- Nonicons, special cool symbols
         { family = "nonicons",        scale = 1.0 },
         -- Codicon (vs-code specific)
@@ -90,7 +110,6 @@ return {
         -- Terminal Blocks
         { family = "LegacyComputing", scale = 1.1 },
     }),
-    -- harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1', 'dist=1' },
     font_rules = {
         { -- Italic
             intensity = 'Normal',
@@ -98,7 +117,7 @@ return {
             font = wezterm.font({
                 family="Monaspace Radon",  -- script style
                 style = 'Normal',
-                harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+                harfbuzz_features=monaspace_font_features,
             })
         },
 
@@ -109,7 +128,7 @@ return {
                 family='Monaspace Argon',
                 -- weight='ExtraBold',
                 weight='Bold',
-                harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+                harfbuzz_features=monaspace_font_features,
             })
         },
 
@@ -120,7 +139,7 @@ return {
                 family='Monaspace Radon',
                 style='Normal',
                 weight='Bold',
-                harfbuzz_features={ 'calt', 'liga', 'dlig', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08' },
+                harfbuzz_features=monaspace_font_features,
             }
             )
         },
