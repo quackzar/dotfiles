@@ -148,8 +148,8 @@ return {
     default_cursor_style = 'SteadyBar',
     color_scheme = colorscheme(),
     enable_csi_u_key_encoding = true,
-    send_composed_key_when_left_alt_is_pressed = true,
-    send_composed_key_when_right_alt_is_pressed = true,
+    send_composed_key_when_left_alt_is_pressed = false, -- Usefull as meta key
+    send_composed_key_when_right_alt_is_pressed = true, -- Usefull for special chars
 
     inactive_pane_hsb = {
         saturation = 0.9,
