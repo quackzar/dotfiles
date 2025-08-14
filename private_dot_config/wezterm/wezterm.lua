@@ -92,6 +92,7 @@ return {
     window_decorations = "RESIZE",
     default_prog = { '/opt/homebrew/bin/fish', '-l' },
     font_size = 14,
+    underline_thickness = "1.8pt",
     font = wezterm.font_with_fallback({
         { -- Normal text
             family='Monaspace Neon', -- font version: 
