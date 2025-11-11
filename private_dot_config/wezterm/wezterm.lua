@@ -157,7 +157,7 @@ return {
         brightness = 0.8,
     },
 
-    leader = { key = 'a', mods = 'CTRL', timeout_milliseconds = 1001 },
+    leader = { key = 'a', mods = 'CMD', timeout_milliseconds = 1001 },
 
     keys = {
         {
