@@ -6,6 +6,7 @@
     pager = delta --pager='less -F'
 [init]
     defaultBranch = master
+	templatedir = ~/.git_template
 [column]
     ui = auto
 [fetch]
@@ -44,9 +45,9 @@
     mnemonicPrefix = true
     renames = true
 [delta]
-    plus-color = "#012800"
-    minus-color = "#340001"
-    syntax-theme = DarkNeon
+    ; plus-color = "#012800"
+    ; minus-color = "#340001"
+    syntax-theme = kanagawa
 [interactive]
     diffFilter = delta --color-only
 [difftool]
@@ -79,14 +80,15 @@
     displayRef = 'refs/notes/*'
 
 
-[help]
-    autocorrect = prompt
 [commit]
     gpgsign = true
     verbose = true
 [user]
     name = Mikkel Wienberg Madsen
     email = mikkel.wienberg@alexandra.dk
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgvuWXKO88ZPcnV9Z3BCnwnLNdPi/APmmiubjl44pj9 mikkel.wienberg@alexandra.dk
+    ;signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILgvuWXKO88ZPcnV9Z3BCnwnLNdPi/APmmiubjl44pj9 mikkel.wienberg@alexandra.dk
+    signingkey = /Users/mikkel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/PublicKeys/15885b02fa854c00d2cf316247660b8d.pub
 [gpg]
     format = ssh
+[gpg "ssh"]
+    allowedSignersFile = ~/.gitallowedsigners
