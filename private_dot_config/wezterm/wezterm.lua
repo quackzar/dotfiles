@@ -105,7 +105,7 @@ return {
         -- "DejaVuSansM Nerd Font",
         -- "VictorMono Nerd Font Mono",
         -- Nonicons, special cool symbols
-        { family = "nonicons",        scale = 1.0 },
+        -- { family = "nonicons",        scale = 1.0 },
         -- Codicon (vs-code specific)
         { family = "codicon",         scale = 0.8 },
         -- Terminal Blocks
