@@ -1,83 +1,5 @@
 # PATH
-set -gx PATH "$HOME/.cargo/bin" $PATH
-set -gx PATH "$HOME/.dotnet/tools" $PATH
-
-set -gx GOPATH "$HOME/.go"
-set -gx GOBIN "$GOPATH/bin"
-set -gx PATH "$GOBIN" $PATH
-
-set -gx PATH "$HOME/.yarn/bin" $PATH
-set -gx PATH "$HOME/.local/bin" $PATH
-
-
 set -gx XDG_CONFIG_HOME "$HOME/.config"
-
-function fish_greeting
-    printf "Welcome to fish, %s! You are running %s powered by %s\n" $USER (uname) (uname -m)
-end
-
-set -gx PAGER "less -R"
-set -gx LESS "-R"
-
-set -gx LC_ALL "en_US.UTF-8"
-set -gx LANG "en_US.UTF-8"
-
-
-# alias python 'python3'
-# alias pip 'pip3'
-#
-set -gx PNPM_HOME "/Users/mikkel/Library/pnpm"
-set -gx PATH $PNPM_HOME $PATH
-
-
-if type -q 'pyenv'
-    set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
-    pyenv init - | source
-end
-
-if type -q 'nvim'
-    set -gx EDITOR "nvim"
-    alias vim 'nvim'
-    alias vi 'nvim'
-    alias vimdiff 'nvim -d'
-end
-
-if type -q 'bat'
-    set -gx BAT_PAGER "less -R"
-    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
-    set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
-end
-
-if type -q 'eza'
-    alias ls 'eza --git'
-    alias ll 'eza --git --long'
-    set -U FZF_PREVIEW_DIR_CMD "eza"
-end
-
-if type -q 'colormake'
-    alias make 'colormake'
-end
-
-if type -q 'gsed'
-    alias sed 'gsed'
-end
-
-if type -q 'yabai'
-    # Turn yabai's statusbar on or off
-    alias statusbar 'yabai -m config status_bar'
-
-    # Turn yabai's border on or off
-    alias border 'yabai -m config window_border'
-end
-
-if type -q 'direnv'
-    direnv hook fish | source
-    set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)
-    set -g direnv_fish_mode eval_after_arrow # trigger direnv at prompt, and only after arrow-based directory changes before executing command
-    set -g direnv_fish_mode disable_arrow    # trigger direnv at prompt only, this is similar functionality to the original behavior
-end
-
-
 
 switch (uname)
     case Darwin
@@ -112,8 +34,6 @@ switch (uname)
         set -g PATH $ANDROID_HOME/platform-tools $PATH
         set -g PATH $HOME/.wasmedge/bin $PATH
 
-        # set -x SSH_AUTH_SOCK /Users/mikkel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
-
     case Linux
         alias pbcopy 'xclip -selection clipboard'
         alias pbpaste 'xclip -selection clipboard -o'
@@ -121,6 +41,80 @@ switch (uname)
         alias open 'xdg-open 2>/dev/null'
         alias xdg-open 'xdg-open 2>/dev/null'
         alias mon2cam 'deno run --unstable -A -r -q https://raw.githubusercontent.com/ShayBox/Mon2Cam/master/src/mod.ts'
+end
+
+set -gx PATH "$HOME/.cargo/bin" $PATH
+set -gx PATH "$HOME/.dotnet/tools" $PATH
+
+set -gx GOPATH "$HOME/.go"
+set -gx GOBIN "$GOPATH/bin"
+set -gx PATH "$GOBIN" $PATH
+
+# alias python 'python3'
+# alias pip 'pip3'
+#
+set -gx PNPM_HOME "/Users/mikkel/Library/pnpm"
+set -gx PATH $PNPM_HOME $PATH
+set -gx PATH "$HOME/.yarn/bin" $PATH
+set -gx PATH "$HOME/.local/bin" $PATH
+
+
+function fish_greeting
+    printf "Welcome to fish, %s! You are running %s powered by %s\n" $USER (uname) (uname -m)
+end
+
+set -gx PAGER "less -R"
+set -gx LESS "-R"
+
+set -gx LC_ALL "en_US.UTF-8"
+set -gx LANG "en_US.UTF-8"
+
+
+if type -q 'pyenv'
+    set -gx PYENV_VIRTUALENV_DISABLE_PROMPT 1
+    pyenv init - | source
+end
+
+if type -q 'nvim'
+    set -gx EDITOR "nvim"
+    alias vim 'nvim'
+    alias vi 'nvim'
+    alias vimdiff 'nvim -d'
+end
+
+if type -q 'bat'
+    set -gx BAT_PAGER "less -R"
+    set -gx MANPAGER "sh -c 'col -bx | bat -l man -p'"
+    set -U FZF_PREVIEW_FILE_CMD 'bat --color=always {}'
+end
+
+if type -q 'eza'
+    alias ls 'eza --git'
+    alias ll 'eza --git --long --flags'
+    set -U FZF_PREVIEW_DIR_CMD "eza"
+end
+
+if type -q 'colormake'
+    alias make 'colormake'
+end
+
+if type -q 'gsed'
+    alias sed 'gsed'
+end
+
+if type -q 'yabai'
+    # Turn yabai's statusbar on or off
+    alias statusbar 'yabai -m config status_bar'
+
+    # Turn yabai's border on or off
+    alias border 'yabai -m config window_border'
+end
+
+if type -q 'direnv'
+    direnv hook fish | source
+    set -g direnv_fish_mode eval_on_arrow    # trigger direnv at prompt, and on every arrow-based directory change (default)
+    set -g direnv_fish_mode eval_after_arrow # trigger direnv at prompt, and only after arrow-based directory changes before executing command
+    set -g direnv_fish_mode disable_arrow    # trigger direnv at prompt only, this is similar functionality to the original behavior
 end
 
 
@@ -153,9 +147,6 @@ if status --is-interactive
     if type -q 'zoxide'
         zoxide init fish | source
     end
-    if type -q 'atuin'
-        atuin init fish | source
-    end
     if type -q 'wezterm'
         wezterm shell-completion --shell=fish | source
     end
@@ -164,9 +155,9 @@ end
 
 test -e {$HOME}/.iterm2_shell_integration.fish ; and source {$HOME}/.iterm2_shell_integration.fish
 
-# if type -q starship
-#     starship init fish | source
-# end
+if type -q starship
+    starship init fish | source
+end
 
 # set -g VIRTUALFISH_PLUGINS "auto_activation compat_aliases"
 
@@ -192,6 +183,8 @@ if test -e $LOCAL_FISH_CFG
 end
 
 source "$HOME/.config/fish/themes/kanagawa.fish"
+
+set -x SSH_AUTH_SOCK /Users/mikkel/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 
 # opam configuration
 source /Users/mikkel/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
