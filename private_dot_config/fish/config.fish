@@ -8,7 +8,7 @@ switch (uname)
         set -g PATH (brew --prefix)'/bin' $PATH
         set -g PATH (brew --prefix)'/sbin' $PATH
         set -g PATH (brew --prefix)'/opt/llvm/bin' $PATH
-
+        set -g PATH (brew --prefix rustup)'/bin' $PATH
         set -g SDKPATH (xcrun --show-sdk-path)
 
         set -g DYLD_LIBRARY_PATH "/usr/local/include" $DYLD_LIBRARY_PATH
@@ -33,6 +33,7 @@ switch (uname)
         set -g PATH $ANDROID_HOME/tools $PATH
         set -g PATH $ANDROID_HOME/platform-tools $PATH
         set -g PATH $HOME/.wasmedge/bin $PATH
+
 
     case Linux
         alias pbcopy 'xclip -selection clipboard'
